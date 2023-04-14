@@ -3,13 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import Navbar from './components/estaticos/navbar/Navbar'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <Navbar/>
+    
     </>
-  )
+  );
 }
 
-export default App
+export default App;
