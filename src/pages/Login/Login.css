@@ -1,5 +1,6 @@
 .bg-color {
     background-color: rgb(234, 237, 240);
+    min-height: calc(100vh - 86px);
 }
 
 .login-top{
@@ -67,7 +68,7 @@
 
 
 .imagem{
-    background-image: url('../assents/img/welcome2.png');
+    background-image: url('../img/welcome2.png');
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 60vh;

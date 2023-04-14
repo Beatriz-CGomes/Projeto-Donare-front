@@ -21,11 +21,13 @@ function Login() {
                         <Typography  className='texto0'>Senha</Typography>
                         <TextField id='senha'  type='password' variant='outlined' margin='normal' fullWidth   className='bordas' />
                        
+                       <Link to='/home' style={{textDecoration:'none'}}>
                         <Box textAlign='center' marginTop={2}>
                             <Typography variant="h6" className='texto2' style={{ fontWeight: 'bold' }}>Esqueceu a senha? </Typography>
                             <Button type='submit' className='buttom'>  Entrar
                             </Button>
                         </Box>
+                        </Link>
                     </form>
 
                     <Box display='flex' justifyContent='center' marginTop={2}>

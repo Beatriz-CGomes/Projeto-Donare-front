@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Login from './pages/Login/Login'
 import Home from './pages/Home/Home'
 import Footer from './components/estaticos/footer/Footer'
 import './App.css'
@@ -12,11 +13,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<></>}></Route>
-          <Route path='home' element={<Home />}></Route>
+          <Route path='/' element={<Login />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/home' element={<Home />}/>
         </Routes>
-
-        <Footer />
+        <Footer/>
       </BrowserRouter>
     </>
   );

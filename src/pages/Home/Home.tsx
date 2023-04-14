@@ -1,6 +1,5 @@
 import React from "react";
 import { Avatar, Grid, Paper, Typography } from "@material-ui/core";
-import PersonIcon from '@material-ui/icons/Person';
 
 import './Home.css'
 import { Box } from "@mui/material";
@@ -24,7 +23,7 @@ function Home() {
 
                 </Grid>
                 <Grid item xs={6}>
-                    <Paper style={{ backgroundColor: 'red', height: '100vh' }} />
+                    <Paper className="altura" />
                 </Grid>
 
                 <Grid item xs={3}>
@@ -34,6 +33,8 @@ function Home() {
 
                     <Box className="card2">
                         <Typography variant="h5" component='h5' align="center" className="titulo">Recomendações</Typography>
+                    </Box>
+                    <Box>
                     </Box>
                 </Grid>
             </Grid>

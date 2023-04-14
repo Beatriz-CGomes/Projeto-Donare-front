@@ -36,3 +36,8 @@
   min-height: 40vh;
   background-color: #ffb84c;
 }
+
+.altura{
+  min-height: calc(100vh - 86px);
+  background-color: red;
+}
