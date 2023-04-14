@@ -1,0 +1,76 @@
+.bg-color {
+    background-color: rgb(234, 237, 240);
+}
+
+.login-top{
+    padding: 130px;
+}
+
+.email name{
+    color: #363636;
+}
+
+.texto0{
+    color : rgb(61, 61, 61);
+    font-size: 13px !important;
+    font-weight: bold !important;
+    margin: 0 auto !important;
+}
+
+
+.bordas{
+    margin: 0 auto !important;
+   border-radius: 100px !important;
+}
+
+
+.texto1{
+    color : rgb(61, 61, 61);
+    padding: 20px;
+    font-family: 'Calibri' !important ;
+    font-size: 40px !important;
+}
+
+.texto2{
+    color: rgb(230, 107, 7);
+    font-weight: 'bolder' !important;
+    font-size: 15px !important;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.chamada1{
+   
+    margin-right: 60px !important;
+    color:  #363636;
+}
+
+.chamada2{
+    color: rgb(230, 107, 7);
+    font-weight: bold !important;
+    
+}
+
+
+.buttom{
+    height: 50px;
+    width: 100%;
+    background-color:  rgb(230, 107, 7) !important;
+    color: rgb(255, 255, 255) !important;
+    font-weight: 'bold'!important;
+    border-radius: 55px !important;
+    border: none !important ;
+    text-transform: Capitalize  !important ;
+}
+
+
+
+
+.imagem{
+    background-image: url('../assents/img/welcome2.png');
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 60vh;
+    background-size: contain;
+    background-position: center;
+}
