@@ -1,0 +1,38 @@
+.bg-color {
+  background-color: #f6f1e9;
+}
+
+.card {
+  background-color: #ffb84c;
+  min-height: 40vh;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 5px 0 40px;
+}
+
+.icons {
+  width: 40px;
+  height: 40px;
+}
+
+.card2 {
+  min-height: 40vh;
+  background-color: #ffb84c;
+  margin: 15px 40px 0 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+}
+
+.titulo {
+  font-weight: bold !important;
+  color: white;
+}
+
+.card3 {
+  min-height: 40vh;
+  background-color: #ffb84c;
+}
