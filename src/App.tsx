@@ -1,18 +1,23 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Footer from './components/estaticos/footer/Footer'
 import './App.css'
 
 import Navbar from './components/estaticos/navbar/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-<<<<<<< HEAD
-    <Footer />
-=======
-    <Navbar/>
->>>>>>> d06c5e0db458c247ce549e55aaba6f6d41ff32ed
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<></>}></Route>
+          <Route path='home' element={<Home />}></Route>
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
