@@ -1,0 +1,26 @@
+.bg-page {
+    min-height: calc(100vh - 86px);
+    min-width: 100vw;
+    background-color: rgb(233, 233, 233);
+}
+
+.titulo {
+    padding: 10px;
+    color: #000000 !important;
+    font-size: 23px !important;
+    font-weight: bold !important;
+}
+
+.text-form {
+    color: #000000 !important;
+    font-size: 12px !important;
+}
+
+.botao {
+    height: 50px;
+    width: 100%;
+    background-color:  rgb(230, 107, 7) !important;
+    color: rgb(255, 255, 255) !important;
+    font-weight: 'bold'!important;
+    border-radius: 55px !important;
+}
