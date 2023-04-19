@@ -1,38 +1,38 @@
 .bg-color {
     background-color: rgb(234, 237, 240);
     min-height: calc(100vh - 86px);
+    
 }
 
-.login-top{
+.login-top {
     padding: 130px;
 }
 
-.email name{
-    color: #363636;
-}
-
-.texto0{
-    color : rgb(61, 61, 61);
-    font-size: 13px !important;
+/* email e senha*/
+.texto0 {
+    color: rgb(61, 61, 61);
+    font-size: 12px !important;
     font-weight: bold !important;
     margin: 0 auto !important;
 }
 
 
-.bordas{
+.bordas {
     margin: 0 auto !important;
-   border-radius: 100px !important;
+    border-radius: 100px !important;
 }
 
-
-.texto1{
-    color : rgb(61, 61, 61);
-    padding: 20px;
-    font-family: 'Calibri' !important ;
+/* Bem vindo */
+.texto1 {
+    color: rgb(61, 61, 61);
+    font-family: 'Calibri' !important;
     font-size: 40px !important;
+   text-align:  center !important;
+   padding-bottom: 20px;
 }
 
-.texto2{
+/* entrar */
+.texto2 {
     color: rgb(230, 107, 7);
     font-weight: 'bolder' !important;
     font-size: 15px !important;
@@ -40,38 +40,51 @@
     padding-bottom: 10px;
 }
 
-.chamada1{
-   
-    margin-right: 60px !important;
-    color:  #363636;
+/* entrar */
+.chamada1 {
+    font-size: 16px !important;
+    
+    color: #363636;
 }
 
-.chamada2{
+.chamada2 {
     color: rgb(230, 107, 7);
     font-weight: bold !important;
+    margin-left: 45px !important;
     
+
 }
 
 
-.buttom{
+.buttom {
     height: 50px;
-    width: 100%;
-    background-color:  rgb(230, 107, 7) !important;
+    width: 80%;
+    background-color: rgb(230, 107, 7) !important;
     color: rgb(255, 255, 255) !important;
-    font-weight: 'bold'!important;
+    font-weight: 'bold' !important;
     border-radius: 55px !important;
-    border: none !important ;
-    text-transform: Capitalize  !important ;
+    border: none !important;
+    text-transform: Capitalize !important;
 }
 
 
 
 
-.imagem{
+.imagem {
     background-image: url('../img/welcome2.png');
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 60vh;
     background-size: contain;
     background-position: center;
+}
+
+.bordas textField {
+    border-radius: 200px !important;
+    background-color: aqua !;
+}
+
+.bordas-text Typography{
+    padding-bottom: 20px !important;
+    padding: 10px !important;
 }
