@@ -1,5 +1,6 @@
 import "./Cadastro.css";
-import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
+import { Box } from "@mui/material";
 import { Link } from 'react-router-dom';
 
 function Cadastrar() {
