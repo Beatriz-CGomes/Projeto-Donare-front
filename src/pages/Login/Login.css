@@ -1,11 +1,11 @@
 .bg-color {
     background-color: rgb(234, 237, 240);
     min-height: calc(100vh - 86px);
-    
+
 }
 
 .login-top {
-    padding: 130px;
+    padding: 60px;
 }
 
 /* email e senha*/
@@ -14,6 +14,7 @@
     font-size: 12px !important;
     font-weight: bold !important;
     margin: 0 auto !important;
+    margin-left: 60px !important;
 }
 
 
@@ -27,10 +28,12 @@
     color: rgb(61, 61, 61);
     font-family: 'Calibri' !important;
     font-size: 40px !important;
-   text-align:  center !important;
-   padding-bottom: 20px;
-   
-   font-weight: bold !important;
+    text-align: left !important;
+    margin-left: 50px !important;
+    padding-bottom: 20px;
+    font-weight: unset !important;
+
+    font-weight: bold !important;
 }
 
 /* entrar */
@@ -40,21 +43,21 @@
     font-size: 15px !important;
     text-align: left;
     padding-bottom: 10px;
+    margin-left: 59px !important;
 }
 
 /* entrar */
 .chamada1 {
     font-size: 16px !important;
-    
+    margin-left: 120px !important;
     color: #363636;
 }
 
 .chamada2 {
     color: rgb(230, 107, 7);
     font-weight: bold !important;
-    margin-left: 45px !important;
-    
-
+    margin-left: 12px !important;
+    font-size: 17px !important;
 }
 
 
@@ -73,20 +76,51 @@
 
 
 .imagem {
-    background-image: url('../img/welcome2.png');
+    background-image: url('../img/5.png');
     background-repeat: no-repeat;
     width: 100vh;
-    min-height: 60vh;
-    background-size: contain;
+    min-height: 100vh;
+    background-size: unset;
     background-position: center;
 }
 
-.bordas textField {
-    border-radius: 200px !important;
-    background-color: aqua !;
+
+
+.input-form .MuiOutlinedInput-root {
+    border-radius: 14px !important;
+    width: 400px !important;
+    margin-left: 55px !important;
 }
 
-.bordas-text Typography{
-    padding-bottom: 20px !important;
+.hr {
     padding: 10px !important;
+}
+
+.redes {
+    font-size: 25px !important;
+    margin-left: 99px;
+    color: #363636;
+    
+}
+
+.google {
+    font-family: Calibri !important;
+    justify-content: center !important;
+    margin-top: 8px !important;
+    padding-left: 10px;
+    font-size: 19px !important;
+
+}
+
+
+.fundo {
+    background-color: #dacfcf81;
+    border-radius: 15px;
+    box-sizing: border-box !important;
+    height: 50px !important;
+    width: 80% !important;
+    margin-left: 50px !important;
+    margin-top: 8px !important;
+ 
+
 }
