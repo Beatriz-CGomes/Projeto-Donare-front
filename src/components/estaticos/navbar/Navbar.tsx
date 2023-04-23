@@ -1,59 +1,112 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { Box } from '@mui/material';
-import { Link } from 'react-router-dom';
 
-import './Navbar.css'
-function Navbar() {
-    return (
-        <>
-            <AppBar position="static" className='color'>
-                <Toolbar variant="dense">
-                    <Box className='cursor'>
-                        <Typography variant="h5" color="inherit">
-                            Dom
-                        </Typography>
-                    </Box>
+import "./Navbar.css"
 
-                    <Box display="flex" justifyContent="start">
-                        <Link to='/home' style={{ textDecoration: 'none', color: 'white' }}>
-                            <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
-                                    Home
-                                </Typography>
-                            </Box>
-                        </Link>
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import MoreIcon from '@mui/icons-material/MoreVert';
+import { Link } from "react-router-dom";
 
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Postagens
-                            </Typography>
-                        </Box>
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  alignItems: 'flex-start',
+  paddingTop: theme.spacing(1),
+  paddingBottom: theme.spacing(2),
+  
+  '@media all': {
+    minHeight: 128,
+  },
+}));
 
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Temas
-                            </Typography>
-                        </Box>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                Cadastrar Tema
-                            </Typography>
-                        </Box>
-
-                        <Link to='/login' style={{ textDecoration: 'none', color: 'white' }}>
-                            <Box mx={1} className='cursor' >
-                                <Typography variant="h6" color="inherit">
-                                    Sair
-                                </Typography>
-                            </Box>
-                        </Link>
-                    </Box>
-
-                </Toolbar>
-            </AppBar>
-        </>
-    )
+export default function ProminentAppBar() {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" className="color">
+        <StyledToolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            className="texto"
+            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
+          >
+            Donare
+          </Typography>
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            className="texto"
+            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
+          >
+        <Link to='/home' className="decorator-text-none"> </Link>
+            Home
+          </Typography>
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            className="texto"
+            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
+          >
+            Postagens
+          </Typography>
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            className="texto"
+            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
+          >
+            Temas
+          </Typography>
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            className="texto"
+            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
+          >
+            CadastroTema
+          </Typography>
+          <Typography
+            variant="h5"
+            noWrap
+            component="div"
+            className="texto"
+            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
+          >
+        <Link to='/login' className="decorator-text-none"></Link>
+            Sair
+          </Typography>
+          <IconButton size="large" aria-label="search" color="inherit">
+            <SearchIcon />
+          </IconButton>
+          <IconButton
+            size="large"
+            aria-label="display more actions"
+            edge="end"
+            color="inherit"
+          >
+            <MoreIcon />
+          </IconButton>
+        </StyledToolbar>
+      </AppBar>
+    </Box>
+  );
 }
 
-export default Navbar;

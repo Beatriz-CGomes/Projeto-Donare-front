@@ -1,13 +1,14 @@
-.cursor{
-    cursor: pointer;
-    justify-content: space-between;
-        }
-        
-    .decorator-text-none{
-    text-decoration: none;
-        }
 
  .color{
- background: linear-gradient(90deg, rgba(201,64,64,1) 0%, rgba(237,141,14,1) 35%, rgba(249,255,0,1) 100%);
-    
+    background: #f6f1e9;
+   
  }       
+
+ .texto{
+    color: rgb(230, 107, 7);
+ }
+
+        
+.decorator-text-none{
+text-decoration: none;
+  }
