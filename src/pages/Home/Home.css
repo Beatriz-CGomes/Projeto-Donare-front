@@ -1,35 +1,80 @@
+/*corpo*/
 .bg-color {
   background-color: #f6f1e9;
 }
 
+.padding-top-bot {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.non-padding{
+  padding: 0 !important;
+}
+
+.margin-right-2{
+  margin-right: 10px !important;
+}
+
+/*Card esquerda*/
 .card {
-  background-color: #ffb84c;
-  min-height: 40vh;
-  border-radius: 18px;
+  min-width: 30vh !important;
+  margin-top: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 15px 5px 0 40px;
 }
 
 .icons {
-  width: 40px;
-  height: 40px;
+  width: 75px !important;
+  height: 75px !important;
 }
 
+/*Card direita*/
 .card2 {
-  min-height: 40vh;
-  background-color: #ffb84c;
-  margin: 15px 40px 0 5px;
+  min-width: 30vh !important;
   display: flex;
   flex-direction: column;
-  border-radius: 18px;
+  justify-content: flex-start;
+  margin: 10px;
 }
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+ul li{
+  font-size: 1rem;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  padding: 10px;
+}
+
 
 .titulo {
   font-weight: bold !important;
-  color: white;
+  font-size: 1.3rem !important;
+  text-align: center;
 }
 
 .card3 {
@@ -37,7 +82,8 @@
   background-color: #ffb84c;
 }
 
-.altura{
+.altura {
+  margin-top: 10px;
   min-height: calc(100vh - 86px);
-  background-color: red;
+  background-color: red ;
 }
