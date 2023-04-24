@@ -63,7 +63,7 @@
 
 .buttom {
     height: 50px;
-    width: 80%;
+    width: 64vh !important;
     background-color: rgb(230, 107, 7) !important;
     color: rgb(255, 255, 255) !important;
     font-weight: 'bold' !important;
@@ -98,7 +98,7 @@
 
 .redes {
     font-size: 25px !important;
-    margin-left: 99px;
+    margin-left: 80px;
     color: #363636;
     
 }
@@ -118,9 +118,7 @@
     border-radius: 15px;
     box-sizing: border-box !important;
     height: 50px !important;
-    width: 80% !important;
-    margin-left: 50px !important;
+    width: 60vh !important;
+    margin-left: 80px !important;
     margin-top: 8px !important;
- 
-
 }

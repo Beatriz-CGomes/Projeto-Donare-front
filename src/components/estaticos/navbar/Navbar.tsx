@@ -10,14 +10,14 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import MoreIcon from '@mui/icons-material/MoreVert';
+import HomeIcon from '@mui/icons-material/Home';
 import { Link } from "react-router-dom";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'flex-start',
   paddingTop: theme.spacing(1),
   paddingBottom: theme.spacing(2),
-  
+
   '@media all': {
     minHeight: 128,
   },
@@ -27,83 +27,54 @@ export default function ProminentAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className="color">
+
         <StyledToolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            className="texto"
-            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
-          >
-            Donare
-          </Typography>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            className="texto"
-            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
-          >
-        <Link to='/home' className="decorator-text-none"> </Link>
-            Home
-          </Typography>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            className="texto"
-            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
-          >
-            Postagens
-          </Typography>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            className="texto"
-            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
-          >
-            Temas
-          </Typography>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            className="texto"
-            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
-          >
-            CadastroTema
-          </Typography>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            className="texto"
-            sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
-          >
-        <Link to='/login' className="decorator-text-none"></Link>
-            Sair
-          </Typography>
-          <IconButton size="large" aria-label="search" color="inherit">
-            <SearchIcon />
-          </IconButton>
-          <IconButton
-            size="large"
-            aria-label="display more actions"
-            edge="end"
-            color="inherit"
-          >
-            <MoreIcon />
-          </IconButton>
+
+          <Box>
+            <Typography variant="h5" noWrap component="div" className="imagemlogo">
+              Donare
+            </Typography>
+          </Box>
+
+
+          <Box className="alinhamento">
+            <IconButton className="icones">
+              <HomeIcon />
+              <Typography variant="h6" className="TextoNav"> Home </Typography>
+            </IconButton>
+
+          </Box>
+
+
+
+          <Box>
+            <Typography variant="h6" className="TextoNav">
+              Postagens
+            </Typography>
+          </Box>
+
+          <Box>
+            <Typography variant="h6" className="TextoNav">
+              Temas
+            </Typography>
+          </Box>
+
+          <Box>
+            <Typography variant="h6" className="TextoNav">
+              Logout
+            </Typography>
+          </Box>
+
+
+
+          <Box display='flex' justifyContent='left' alignItems="center" className='barraPesquisa'>
+            <IconButton className="pesquisa">
+              <SearchIcon />
+            </IconButton>
+          </Box>
+
+
+
         </StyledToolbar>
       </AppBar>
     </Box>
