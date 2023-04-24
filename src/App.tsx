@@ -17,7 +17,7 @@ function App() {
           <Route path="/cadastrar" element={<Cadastro />}/>
           <Route path='/home' element={<Home />}/>
         </Routes>
-        {/* <Footer/> */}
+        { <Footer/> }
       </BrowserRouter>
     </>
   );

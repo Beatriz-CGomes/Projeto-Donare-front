@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Footer.css';
 
@@ -7,7 +6,7 @@ function Footer() {
     <div className="footer">
       <div className="container">
         <div className="row">
-          <div className="col-md-12">
+          <div className="lista-item">
             <ul className="lista">
               <li className="lista-item"><a href="#">Termos de Serviço</a></li>
               <li className="lista-item"><a href="#">Diretrizes da Comunidade</a></li>
