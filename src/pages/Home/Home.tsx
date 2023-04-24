@@ -125,11 +125,11 @@ function Home() {
                         <CardContent>
                             <Typography className="titulo">Recomendações de ONGs para seguir: </Typography>
                             <ul>
-                                <li>WWF Brasil</li>
-                                <li>Green Peace</li>
-                                <li>Instituto Cuida de Mim</li>
-                                <li>Beija-Flores Solidários</li>
-                                <li>Amigos do bem</li>
+                                <li className="clickable">WWF Brasil</li>
+                                <li className="clickable">Green Peace</li>
+                                <li className="clickable">Instituto Cuida de Mim</li>
+                                <li className="clickable">Beija-Flores Solidários</li>
+                                <li className="clickable">Amigos do bem</li>
                             </ul>
                         </CardContent>
                     </Card>
