@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Card, CardActions, CardContent } from "@material-ui/core";
+import { Avatar, Button, Card, CardActions, CardContent } from "@material-ui/core";
 import { Collapse, Grid, IconButton, Paper, Typography } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
@@ -64,8 +64,19 @@ function Home() {
                     </Box>
 
                 </Grid>
-                <Grid item xs={6}>
-                    <Paper className="altura" />
+                <Grid item xs={6} className="teste">
+                        {/* <Card className="teste2" variant="outlined">
+                            <CardContent className="flex-row">
+                                <Avatar>D</Avatar>
+                                <Button variant="outlined">teste</Button>
+                            </CardContent>
+                            <hr />
+                            <CardContent>
+                                
+                            </CardContent>
+                        </Card> */}
+
+                        {/* <ModalPost/> */}
                 </Grid>
 
                 <Grid item xs={3}>
@@ -123,7 +134,7 @@ function Home() {
 
                     <Card variant="outlined" className="card2">
                         <CardContent>
-                            <Typography className="titulo">Recomendações de ONGs para seguir: </Typography>
+                            <Typography className="titulo">Algumas ONGs para seguir: </Typography>
                             <ul>
                                 <li className="clickable">WWF Brasil</li>
                                 <li className="clickable">Green Peace</li>
