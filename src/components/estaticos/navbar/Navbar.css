@@ -7,15 +7,12 @@
 }
 
 
-.alinhamento{
-   margin-left: 50px !important;
-
-}
-
+/* texto das categorias junto com os */
 
 .TextoNav {
    color: rgb(255, 255, 255);
    margin-left: 50px !important;
+   margin-top: -35px !important;
    font-family: Calibri !important;
    text-decoration: none !important;
    display: flex !important;
@@ -23,25 +20,34 @@
    justify-content: center !important;
 }
 
+.icones {
+   margin: 10px !important;
+   color: beige!important;
+   display: grid !important;
+   justify-content: center !important;
+}
 
 
+/* cursos */
 .TextoNav:hover {
    color: rgba(0, 0, 0, 0.712) !important;
-   border-bottom: 2px solid rgba(0, 0, 0, 0.712) !important;
+   border-bottom: px solid rgba(0, 0, 0, 0.712) !important;
 }
 
 
 
-.imagemlogo {
-   margin-left: 120px !important;
-   margin-right: 100px !important;
-}
 
 
 .decorator-text-none {
    text-decoration: none;
 }
 
+
+
+
+
+
+/* barra de pesquisa */
 .pesquisa {
    margin-top: 5px !important;
    color: rgba(0, 0, 0, 0.712) !important;
@@ -52,7 +58,7 @@
    border-radius: 10px;
    box-sizing: border-box !important;
    height: 40px !important;
-   width: 30vh !important;
+   width: 35vh !important;
    margin-left: 80px !important;
 
 }
@@ -61,5 +67,13 @@
 .pesquisa {
    margin-right: 60px !important;
    padding: 10px !important;
+
+}
+
+
+/* logo branco donare */
+.imagemlogo {
+   margin: 0 auto !important;
+   margin-top: -27px !important;
 
 }

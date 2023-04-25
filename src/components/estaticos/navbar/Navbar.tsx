@@ -1,17 +1,19 @@
 
 import "./Navbar.css"
 
-import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
-import { Link } from "react-router-dom";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
+
+
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'flex-start',
@@ -25,41 +27,43 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function ProminentAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 2 }}>
       <AppBar position="static" className="color">
 
         <StyledToolbar>
 
-          <Box>
-            <Typography variant="h5" noWrap component="div" className="imagemlogo">
-              Donare
+          <Box className="imagemlogo">
+            <Typography>
+              <img src="https://i.imgur.com/iAIRTMo.png" alt="" width="150px" height="150px" className="imagemlogo" />
             </Typography>
           </Box>
 
 
-          <Box className="alinhamento">
-            <IconButton className="icones">
-              <HomeIcon />
-              <Typography variant="h6" className="TextoNav"> Home </Typography>
-            </IconButton>
+          <Box className="icones">
+
+            <HomeIcon />
+            <Typography variant="h6" className="TextoNav"> Home </Typography>
 
           </Box>
 
 
 
-          <Box>
+          <Box className="icones">
+            <AccountCircleIcon />
             <Typography variant="h6" className="TextoNav">
               Postagens
             </Typography>
           </Box>
 
-          <Box>
+          <Box className="icones">
+          <AccountCircleIcon />
             <Typography variant="h6" className="TextoNav">
               Temas
             </Typography>
           </Box>
 
-          <Box>
+          <Box className="icones">
+            <LogoutIcon />
             <Typography variant="h6" className="TextoNav">
               Logout
             </Typography>
