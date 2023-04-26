@@ -119,10 +119,3 @@ ul li {
   border-radius: 12px;
 }
 
-.teste2{
-
-  display: flex;
-  flex-direction: column;
-  margin: 10px auto;
-  max-width: 40vw;
-}

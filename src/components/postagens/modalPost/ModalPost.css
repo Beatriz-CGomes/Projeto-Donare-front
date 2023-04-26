@@ -1,0 +1,38 @@
+.teste {
+  background-color: #fff;
+  margin-top: 10px !important;
+  border-radius: 12px;
+}
+
+.card-publicar{
+    margin: 10px auto;
+    max-width: 40vw;
+    border-radius: 12px !important;
+    border: 2px solid orange !important;
+  }
+
+.display-flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.botao-postagem{
+    padding-left: 10px !important;
+    width: 60vh;
+    margin-left: 15px !important;
+    border: 1px solid orange !important;
+}
+
+.bottom-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 5px !important;
+}
+
+.icones-barra{
+    padding: 8px !important;
+    color: orange !important;
+}

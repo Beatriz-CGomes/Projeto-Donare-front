@@ -7,6 +7,8 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import './Home.css'
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
+import CadastroPost from "../../components/postagens/cadastrarPost/CadastroPost";
+import ModalPost from "../../components/postagens/modalPost/ModalPost";
 
 
 function Home() {
@@ -65,18 +67,7 @@ function Home() {
 
                 </Grid>
                 <Grid item xs={6} className="teste">
-                        {/* <Card className="teste2" variant="outlined">
-                            <CardContent className="flex-row">
-                                <Avatar>D</Avatar>
-                                <Button variant="outlined">teste</Button>
-                            </CardContent>
-                            <hr />
-                            <CardContent>
-                                
-                            </CardContent>
-                        </Card> */}
-
-                        {/* <ModalPost/> */}
+                        <ModalPost/>
                 </Grid>
 
                 <Grid item xs={3}>
