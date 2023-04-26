@@ -5,6 +5,7 @@ import Cadastro from "./pages/Cadastro/Cadastro"
 import Home from './pages/Home/Home'
 import Footer from './components/estaticos/footer/Footer'
 import './App.css';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema'
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
           <Route path='/login' element={<Login />}/>
           <Route path="/cadastrar" element={<Cadastro />}/>
           <Route path='/home' element={<Home />}/>
+          {/* <Route path='/temas' element{<ListaTemas/>}/> */}
+          <Route path='/formTema' element={<CadastroTema/>}/>
+          <Route path='/formTema/:id' element={<CadastroTema/>}/>
+          {/* <Route path='/deleteTema/:id' element={<DeletarTema/>}/> */}
         </Routes>
         { <Footer/> }
       </BrowserRouter>

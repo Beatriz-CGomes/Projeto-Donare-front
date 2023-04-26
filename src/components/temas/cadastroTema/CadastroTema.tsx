@@ -5,7 +5,7 @@ import useLocalStorage from "react-use-localstorage";
 import Tema from "../../../models/Tema";
 import { atualizar, buscarId, postar } from "../../../services/Service";
 
-function cadastroTema() {
+function CadastroTema() {
 
     let navigate = useNavigate()
     const {id} = useParams <{id: string}>()
@@ -95,4 +95,4 @@ function cadastroTema() {
     )
 }
 
-export default cadastroTema;
+export default CadastroTema;
