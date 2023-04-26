@@ -63,7 +63,10 @@ function Cadastrar() {
     }, [userResult])
 
     return (
-        <Grid container className="bg-page" justifyContent="center">
+        <Grid container className="bg-page" justifyContent="space-around">
+            <Grid item xs={6}>
+
+            </Grid>
             <Grid item xs={6} className="grid-form" alignItems="center">
 
                 <form onSubmit={cadastrar}>
@@ -83,22 +86,22 @@ function Cadastrar() {
                     </FormControl>
 
                     <Typography className="text-form">*Nome completo:</Typography>
-                    <TextField className="form" value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nome" id="nome" variant="outlined" margin="normal" fullWidth />
+                    <TextField className="formulario" value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nome" id="nome" variant="outlined" margin="normal" fullWidth />
 
                     <Typography className="text-form">*Nickname: </Typography>
-                    <TextField className="form" value={user.nickname} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nickname" id="nickname" variant="outlined" margin="normal" fullWidth />
+                    <TextField className="formulario" value={user.nickname} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nickname" id="nickname" variant="outlined" margin="normal" fullWidth />
 
                     <Typography className="text-form">*Email:</Typography>
-                    <TextField className="form" value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name='usuario' id="usuario" variant="outlined" margin="normal" fullWidth />
+                    <TextField className="formulario" value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name='usuario' id="usuario" variant="outlined" margin="normal" fullWidth />
 
                     <Typography className="text-form">*Senha:</Typography>
-                    <TextField className="form" value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} type="password" name="senha" id="senha" variant="outlined" margin="normal" fullWidth />
+                    <TextField className="formulario" value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} type="password" name="senha" id="senha" variant="outlined" margin="normal" fullWidth />
 
                     <Typography className="text-form">*Confirme sua senha: </Typography>
-                    <TextField className="form" value={verificarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => verificaSenhaHandle(e)} type="password" name="confirmaSenha" id='confirmaSenha' variant="outlined" margin="normal" fullWidth />
+                    <TextField className="formulario" value={verificarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => verificaSenhaHandle(e)} type="password" name="confirmaSenha" id='confirmaSenha' variant="outlined" margin="normal" fullWidth />
 
                     <Typography className="text-form">Link da foto de perfil:</Typography>
-                    <TextField className="form" value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nome" id="nome" variant="outlined" margin="normal" fullWidth />
+                    <TextField className="formulario" value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nome" id="nome" variant="outlined" margin="normal" fullWidth />
 
                     <Typography className="text-form-foot">* campos obrigatórios</Typography>
 
