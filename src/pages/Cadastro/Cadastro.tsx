@@ -1,5 +1,5 @@
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
-import { Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
+import { Avatar, Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import User from "../../models/User";
@@ -64,47 +64,52 @@ function Cadastrar() {
 
     return (
         <Grid container className="bg-page" justifyContent="center">
-            <Grid item className="grid-form" alignItems="center">
+            <Grid item xs={6} className="grid-form" alignItems="center">
 
                 <form onSubmit={cadastrar}>
                     <Typography className="text-titulo" align="center">Cadastre-se:</Typography>
-
+                    
                     <FormControl>
-                        <FormLabel id="demo-controlled-radio-buttons-group">Selecione:</FormLabel>
-                        <RadioGroup className="select" row
+                        <FormLabel id="demo-controlled-radio-buttons-group" className="text-form">Selecione:</FormLabel>
+                        <RadioGroup row
                             aria-labelledby="demo-controlled-radio-buttons-group"
                             name="controlled-radio-buttons-group"
                             value={user.tipo}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} >
-                            <FormControlLabel value="1" control={<Radio />} label="Pessoa física" />
-                            <FormControlLabel value="2" control={<Radio />} label="Pessoa jurídica" />
+                            <FormControlLabel control={<Radio />} value="1" label="Pessoa física" />
+                            <FormControlLabel control={<Radio />} value="2" label="Pessoa jurídica" />
                         </RadioGroup>
                     </FormControl>
 
-                    <Typography className="text-form">Nome completo:</Typography>
+                    <Typography className="text-form">*Nome completo:</Typography>
                     <TextField className="form" value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nome" id="nome" variant="outlined" margin="normal" fullWidth />
 
-                    <Typography className="text-form">Usuário:</Typography>
-                    <TextField className="form" value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name='usuario' id="usuario" variant="outlined" margin="normal" fullWidth />
-
-                    <Typography className="text-form">Senha:</Typography>
-                    <TextField className="form" value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} type="password" name="senha" id="senha" variant="outlined" margin="normal" fullWidth />
-
-                    <Typography className="text-form">Confirme sua senha: </Typography>
-                    <TextField className="form" value={verificarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => verificaSenhaHandle(e)} type="password" name="confirmaSenha" id='confirmaSenha' variant="outlined" margin="normal" fullWidth />
-
-                    <Typography className="text-form">Insira o link da sua foto(opcional):</Typography>
-                    <TextField className="form" value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="foto" id="foto" variant="outlined" margin="normal" fullWidth />
-
-                    <Typography className="text-form">Digite o Nickname: </Typography>
+                    <Typography className="text-form">*Nickname: </Typography>
                     <TextField className="form" value={user.nickname} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nickname" id="nickname" variant="outlined" margin="normal" fullWidth />
 
-                    <Box textAlign="center" marginTop={2} display='flex'>
-                        <Link to='/login'>
-                            <Button color="secondary" variant="contained" className="buttom" style={{ textDecoration: 'none' }}>Fazer login</Button>
-                        </Link>
+                    <Typography className="text-form">*Email:</Typography>
+                    <TextField className="form" value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name='usuario' id="usuario" variant="outlined" margin="normal" fullWidth />
 
-                        <Button type="submit" className="buttom">Cadastrar</Button>
+                    <Typography className="text-form">*Senha:</Typography>
+                    <TextField className="form" value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} type="password" name="senha" id="senha" variant="outlined" margin="normal" fullWidth />
+
+                    <Typography className="text-form">*Confirme sua senha: </Typography>
+                    <TextField className="form" value={verificarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => verificaSenhaHandle(e)} type="password" name="confirmaSenha" id='confirmaSenha' variant="outlined" margin="normal" fullWidth />
+
+                    <Typography className="text-form">Link da foto de perfil:</Typography>
+                    <TextField className="form" value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nome" id="nome" variant="outlined" margin="normal" fullWidth />
+
+                    <Typography className="text-form-foot">* campos obrigatórios</Typography>
+
+                    <Box textAlign="center" marginTop={2} display='flex'>
+                        <Button type="submit" className="botao">
+                            <Link to="/login" className="link-botao">Cadastrar</Link>
+                        </Button>
+                    </Box>
+
+                    <Box display="flex">
+                        <Typography className="login-text">Já possui uma conta?</Typography>
+                        <Link to="/login" className="login-link">Fazer login</Link>
                     </Box>
 
                 </form>

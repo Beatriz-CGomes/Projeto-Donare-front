@@ -1,11 +1,12 @@
 .bg-page {
     min-height: calc(100vh - 86px);
-    min-width: 100vw;
+    min-width: 99vw;
     background-color: rgb(233, 233, 233);
 }
 
 .grid-form {
     padding-top: 30px;
+    padding-bottom: 80px;
 }
 
 .text-titulo {
@@ -17,12 +18,19 @@
 }
 
 .select {
-    padding-bottom: 15px !important;
+    padding: 10px !important;
 }
 
 .text-form {
-    color: rgb(61, 61, 61);
+    padding-top: 5px !important;
+    color: rgb(61, 61, 61) !important;
     font-size: 16px !important;
+}
+
+.text-form-foot {
+    padding-top: 5px !important;
+    color: rgb(61, 61, 61) !important;
+    font-size: 12px !important;
 }
 
 .form {
@@ -36,4 +44,24 @@
     color: rgb(255, 255, 255) !important;
     font-weight: 'bold'!important;
     border-radius: 55px !important;
+}
+
+.link-botao {
+    color: rgb(255, 255, 255);
+}
+
+.login-text {
+    padding-top: 15px;
+    color: #363636;
+    font-family: "Calibri";
+    font-size: 17px;
+}
+
+.login-link {
+    padding-top: 15px;
+    color: rgb(230, 107, 7);
+    font-family: "Calibri";
+    font-weight: bold !important;
+    margin-left: 12px !important;
+    font-size: 17px !important;
 }
