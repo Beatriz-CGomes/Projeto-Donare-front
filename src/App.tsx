@@ -7,6 +7,7 @@ import Footer from './components/estaticos/footer/Footer'
 import './App.css';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema'
 import ListaTemas from './components/temas/listaTemas/ListaTemas'
+import DeletarTema from './components/temas/deletarTema/DeletarTema'
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path='/temas' element={<ListaTemas/>}/> 
           <Route path='/formTema' element={<CadastroTema/>}/>
           <Route path='/formTema/:id' element={<CadastroTema/>}/>
-          {/* <Route path='/deleteTema/:id' element={<DeletarTema/>}/> */}
+          <Route path='/deletarTema/:id' element={<DeletarTema/>}/>
         </Routes>
         { <Footer/> }
       </BrowserRouter>
