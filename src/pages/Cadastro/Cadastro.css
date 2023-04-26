@@ -1,12 +1,14 @@
 .bg-page {
     min-height: calc(100vh - 86px);
-    min-width: 99vw;
+    min-width: 98vw;
     background-color: rgb(233, 233, 233);
 }
 
 .grid-form {
     padding-top: 30px;
     padding-bottom: 80px;
+    padding-left: 10px;
+    padding-right: 20px;
 }
 
 .text-titulo {
