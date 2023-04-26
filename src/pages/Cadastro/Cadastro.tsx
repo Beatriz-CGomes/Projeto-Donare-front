@@ -76,6 +76,7 @@ function Cadastrar() {
                             name="controlled-radio-buttons-group"
                             value={user.tipo}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} >
+                            <FormControlLabel control={<Radio />} value="0" label="Admin" />
                             <FormControlLabel control={<Radio />} value="1" label="Pessoa física" />
                             <FormControlLabel control={<Radio />} value="2" label="Pessoa jurídica" />
                         </RadioGroup>
