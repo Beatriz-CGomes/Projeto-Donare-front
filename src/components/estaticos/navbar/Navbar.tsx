@@ -1,90 +1,78 @@
-
+import React from "react";
 import "./Navbar.css"
-
-import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-
+import PostAddIcon from '@material-ui/icons/PostAdd';
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { Link } from "react-router-dom";
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import { Link, useNavigate } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
 
 
+function Navbar() {
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  alignItems: 'flex-start',
-  paddingTop: theme.spacing(1),
-  paddingBottom: theme.spacing(2),
+  const[token,setToken]=useLocalStorage('token')
 
-  '@media all': {
-    minHeight: 128,
-  },
-}));
+  let navigate = useNavigate()
 
-export default function ProminentAppBar() {
+  function goLogout(){
+    setToken('')
+    alert('Usuário deslogado com sucesso!')
+    navigate('/login')
+  }
+
   return (
     <Box sx={{ flexGrow: 2 }}>
       <AppBar position="static" className="color">
-
-        <StyledToolbar>
-
-          <Box className="imagemlogo">
-            <Typography>
-              <img src="https://i.imgur.com/iAIRTMo.png" alt="" width="150px" height="150px" className="imagemlogo" />
-            </Typography>
+        <Toolbar variant="dense" className="container">
+          <Box >
+            <img src="https://i.imgur.com/iAIRTMo.png" alt="Logo donare" width="150px" height="150px" className="imagemlogo" />
           </Box>
+          
+          <Box display='flex' justifyContent='center'>
 
-
-          <Box className="icones">
-
-            <HomeIcon />
-            <Typography variant="h6" className="TextoNav"> Home </Typography>
-
-          </Box>
-
-
-
-          <Box className="icones">
-            <AccountCircleIcon />
-            <Typography variant="h6" className="TextoNav">
-              Postagens
-            </Typography>
-          </Box>
-
-          <Box className="icones">
-          <AccountCircleIcon />
-          <Link to="/temas">
-            <Typography variant="h6" className="TextoNav">
-              Temas
-            </Typography>
+            <Link to='/home'>
+            <Box mx={1} className="dis-flex-row conteudoNav">
+              <HomeIcon className="icones" />
+              <Typography className="texto-navbar" variant="h6"> Home </Typography>
+            </Box>
             </Link>
+
+            <Link to='/posts'>
+            <Box mx={1} className="dis-flex-row conteudoNav">
+              <PostAddIcon />
+              <Typography className="texto-navbar" variant="h6">Postagens</Typography>
+            </Box>
+            </Link>
+
+            <Link to='/temas'>
+            <Box mx={1} className="dis-flex-row conteudoNav">
+              <AssignmentIcon />
+              <Typography className="texto-navbar" variant="h6">Temas</Typography>
+            </Box>
+            </Link>
+
+
+            <Box mx={1} className="dis-flex-row cursor conteudoNav" onClick={goLogout}>
+              <LogoutIcon />
+              <Typography className="texto-navbar" variant="h6">Logout</Typography>
+            </Box>
+
           </Box>
 
-          <Box className="icones">
-            <LogoutIcon />
-            <Typography variant="h6" className="TextoNav">
-              Logout
-            </Typography>
-          </Box>
-
-
-
-          <Box display='flex' justifyContent='left' alignItems="center" className='barraPesquisa'>
-            <IconButton className="pesquisa">
-              <SearchIcon />
-            </IconButton>
-          </Box>
-
-
-
-        </StyledToolbar>
+          <Box className="barraPesquisa">
+              <Box className="pesquisa icone-pesquisa">
+              <SearchIcon className=""/>
+              </Box>
+            </Box>
+        </Toolbar>
       </AppBar>
     </Box>
   );
 }
 
+export default Navbar;
