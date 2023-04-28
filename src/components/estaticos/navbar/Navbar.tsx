@@ -11,68 +11,95 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
+import { addToken } from "../../../store/tokens/Actions";
+import { toast } from "react-toastify";
 
 
 function Navbar() {
 
-  const[token,setToken]=useLocalStorage('token')
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
+  const dispatch = useDispatch();
 
   let navigate = useNavigate()
 
-  function goLogout(){
-    setToken('')
-    alert('Usuário deslogado com sucesso!')
+  function goLogout() {
+    dispatch(addToken(''));
+    toast.info('Usuario deslogado', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+    });
     navigate('/login')
   }
 
-  return (
+
+  var navbarComponent;
+  
+  if (token !== "") {
     <Box sx={{ flexGrow: 2 }}>
       <AppBar position="static" className="color">
         <Toolbar variant="dense" className="container">
           <Box >
             <img src="https://i.imgur.com/iAIRTMo.png" alt="Logo donare" width="150px" height="150px" className="imagemlogo" />
           </Box>
-          
+
           <Box display='flex' justifyContent='center'>
 
             <Link to='/home'>
-            <Box mx={1} className="dis-flex-row conteudoNav">
-              <HomeIcon className="icones" />
-              <Typography className="texto-navbar" variant="h6"> Home </Typography>
-            </Box>
+              <Box mx={1} className="dis-flex-row conteudoNav">
+                <HomeIcon className="icones" />
+                <Typography className="texto-navbar" variant="h6"> Home </Typography>
+              </Box>
             </Link>
 
             <Link to='/posts'>
-            <Box mx={1} className="dis-flex-row conteudoNav">
-              <PostAddIcon className="icones"/>
-              <Typography className="texto-navbar" variant="h6">Postagens</Typography>
-            </Box>
+              <Box mx={1} className="dis-flex-row conteudoNav">
+                <PostAddIcon className="icones" />
+                <Typography className="texto-navbar" variant="h6">Postagens</Typography>
+              </Box>
             </Link>
 
             <Link to='/temas'>
-            <Box mx={1} className="dis-flex-row conteudoNav">
-              <AssignmentIcon className="icones"/>
-              <Typography className="texto-navbar" variant="h6">Temas</Typography>
-            </Box>
+              <Box mx={1} className="dis-flex-row conteudoNav">
+                <AssignmentIcon className="icones" />
+                <Typography className="texto-navbar" variant="h6">Temas</Typography>
+              </Box>
             </Link>
 
 
             <Box mx={1} className="dis-flex-row cursor conteudoNav" onClick={goLogout}>
-              <LogoutIcon className="icones"/>
+              <LogoutIcon className="icones" />
               <Typography className="texto-navbar" variant="h6">Logout</Typography>
             </Box>
 
           </Box>
 
           <Box className="barraPesquisa">
-              <Box className="pesquisa icone-pesquisa">
-              <SearchIcon className=""/>
-              </Box>
+            <Box className="pesquisa icone-pesquisa">
+              <SearchIcon className="" />
             </Box>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
-  );
+
+  }
+
+  return (
+    <>
+      {navbarComponent}
+    </>
+  )
 }
 
 export default Navbar;

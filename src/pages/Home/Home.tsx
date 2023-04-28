@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Button, Card, CardActions, CardContent } from "@material-ui/core";
 import { Collapse, Grid, IconButton, Paper, Typography } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -6,13 +6,18 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 import './Home.css'
 import { Box } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CadastroPost from "../../components/postagens/cadastrarPost/CadastroPost";
 import ModalPost from "../../components/postagens/modalPost/ModalPost";
 import ListaPostagem from "../../components/postagens/listarPost/ListaPost";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/TokensReducer";
+import { toast } from "react-toastify";
 
 
 function Home() {
+
+    let navigate = useNavigate()
 
     //variaveis para a expansão do card
     const [expanded, setExpanded] = React.useState(false)
@@ -21,6 +26,29 @@ function Home() {
     const clickExpandir = () => {
         setExpanded(!expanded);
     }
+
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
+
+
+    useEffect(() => {
+        if (token === '') {
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+            navigate('/login')
+        }
+    }, [token])
 
 
 

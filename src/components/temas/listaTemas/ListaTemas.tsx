@@ -3,14 +3,18 @@ import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom"
 import React, { useEffect, useState } from "react";
 import Tema from "../../../models/Tema";
-import useLocalStorage from "react-use-localstorage";
 import { buscar } from "../../../services/Service";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/TokensReducer";
 
 function ListaTemas() {
     const [temas, setTemas] = useState <Tema[]>([])
     let navigate = useNavigate()
 
-    const[token, setToken] = useLocalStorage("token")
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
     
     useEffect(()=>{
         if(token === "") {
