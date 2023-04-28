@@ -1,13 +1,44 @@
 import { Avatar, Card, CardActions, CardContent, CardHeader} from '@material-ui/core';
 import {CardMedia, Collapse, IconButton, Typography} from '@material-ui/core'
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Postagem from '../../../models/Postagem';
+import { useSelector } from "react-redux";
+import {useNavigate} from 'react-router-dom'
+import useLocalStorage from "react-use-localstorage";
+import { buscar } from '../../../services/Service';
 
 function ListaPostagem() {
- 
+  const [posts,setPosts] = useState<Postagem[]>([])
+
+  const [token,setToken] = useLocalStorage('token')
+
+  let navigate = useNavigate()
+
+  useEffect(()=>{
+    if(token === ''){
+      alert('Você precisa estar logado para ter acesso')
+      navigate('/login')
+    }
+  },[token])
+
+  async function listaPostagem() {
+    await buscar(`/postagens`,setPosts,{
+      headers:{
+        'Authorization' : token
+      }
+    })
+  }
+
+  useEffect(()=>{
+    listaPostagem()
+  },[posts.length])
+
   return (
+    <>{
+      posts.map(post=>(
     <Card variant='elevation'>
       <CardHeader avatar={
         <Avatar>D</Avatar>
@@ -19,8 +50,7 @@ function ListaPostagem() {
       <CardMedia image="https://i.imgur.com/iAIRTMo.png"/>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {post.texto}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -34,29 +64,9 @@ function ListaPostagem() {
           <ExpandMoreIcon />
         </IconButton>
       </CardActions>
-      <Collapse timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
-          </Typography>
-          <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-            heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-            browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-            and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-            pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-          </Typography>
-          <Typography paragraph>
-          </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography>
-        </CardContent>
-      </Collapse>
     </Card>
+    ))}
+    </>
   );
 }
 
