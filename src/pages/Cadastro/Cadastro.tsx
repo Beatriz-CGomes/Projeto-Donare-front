@@ -4,6 +4,7 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import User from "../../models/User";
 import { cadastro } from "../../services/Service";
+import { toast } from "react-toastify";
 
 import "./Cadastro.css";
 
@@ -48,10 +49,28 @@ function Cadastrar() {
 
         if (verificarSenha == user.senha) {
             await cadastro(`/usuarios/cadastrar`, user, setUserResult)
-            alert("Usuário cadastrado com Sucesso!")
+            toast.info('Usuário cadastrado com Sucesso!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });
         }
         else {
-            alert("Por favor, preencha os dados corretamente!")
+            toast.info('Por favor, preencha os dados corretamente!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });
         }
     }
 

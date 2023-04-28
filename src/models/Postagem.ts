@@ -4,11 +4,11 @@ interface Postagem{
     id: number;
     titulo:string;
     texto: string;
-    curtidas: number;
+    curtidas: number|null;
     imagem: string;
     marcacao: string;
     doacao:string;
-    tema:Tema
+    tema: Tema| null
 }
 
 export default Postagem;

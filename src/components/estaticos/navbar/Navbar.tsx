@@ -29,23 +29,24 @@ function Navbar() {
 
   function goLogout() {
     dispatch(addToken(''));
-    toast.info('Usuario deslogado', {
+    toast.info('Usuário Deslogado', {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      theme: "colored",
+      pauseOnHover: true,
+      draggable: true,
       progress: undefined,
+      theme: "colored",
     });
     navigate('/login')
   }
 
 
   var navbarComponent;
-  
+
   if (token !== "") {
+    navbarComponent =
     <Box sx={{ flexGrow: 2 }}>
       <AppBar position="static" className="color">
         <Toolbar variant="dense" className="container">

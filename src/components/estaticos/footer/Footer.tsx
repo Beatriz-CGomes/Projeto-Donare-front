@@ -13,6 +13,7 @@ import { TokenState } from '../../../store/tokens/TokensReducer';
             var footerComponent;
 
             if (token !== "") {
+              footerComponent=
               <Grid className='rodape' container direction='row-reverse' justifyContent='center' alignItems='center'>
               <Grid className='content' item alignItems='center' xs={12}>
                 <Typography className='text-footer' variant='subtitle2'>Termos de Serviço</Typography>

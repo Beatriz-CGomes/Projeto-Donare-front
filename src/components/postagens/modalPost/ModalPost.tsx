@@ -56,7 +56,7 @@ function ModalPost() {
 
     const conteudo = (
         <div style={modalStyle} className={estilo.paper}>
-            <Box display="flex" justifyContent="center" className="cursor">
+            <Box display="flex" justifyContent="flex-end" className="cursor">
                 <CloseIcon onClick={fechaModal} />
             </Box>
 
