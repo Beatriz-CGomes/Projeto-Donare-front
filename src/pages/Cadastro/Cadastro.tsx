@@ -85,9 +85,9 @@ function Cadastrar() {
         <Grid container className="bg-page" justifyContent="space-around">
  
              
-            <Grid item xs={7} className="imagemCadastro" />
+            <Grid item xs={6} className="imagemCadastro" />
 
-            <Grid item xs={5} className="grid-form" alignItems="center">
+            <Grid item xs={6} className="grid-form" alignItems="center">
 
                 <form onSubmit={cadastrar}>
                     <Typography  variant="h6" className="text-titulo" align="left">Cadastre-se</Typography>
