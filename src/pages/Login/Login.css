@@ -70,18 +70,19 @@
     border-radius: 55px !important;
     border: none !important;
     text-transform: Capitalize !important;
+    margin-left: 57px!important;
 }
 
 
 
 
 .imagem {
-    background-image: url('../img/5.png');
+    background-image: url('https://i.imgur.com/QX8qukt.png');
     background-repeat: no-repeat;
-    width: 100vw;
-    min-height: 100vh;
-    background-size: unset;
-    background-position: center;
+    width: 100vw!important;
+    height: 100vh!important;
+    background-position: center!important;
+    background-size: cover;
 }
 
 

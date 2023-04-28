@@ -5,33 +5,45 @@ import { Box } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 
-          function Footer() {
-            const token = useSelector<TokenState, TokenState["tokens"]>(
-              (state) => state.tokens
-            );
+function Footer() {
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
-            var footerComponent;
+  var footerComponent;
 
-            if (token !== "") {
-              footerComponent=
-              <Grid className='rodape' container direction='row-reverse' justifyContent='center' alignItems='center'>
-              <Grid className='content' item alignItems='center' xs={12}>
-                <Typography className='text-footer' variant='subtitle2'>Termos de Serviço</Typography>
-                <Typography className='text-footer' variant='subtitle2'>Diretrizes da Comunidade</Typography>
-                <Typography className='text-footer' variant='subtitle2'>Sobre</Typography>
-                <Typography className='text-footer' variant='subtitle2'>Dúvidas</Typography>
-                <Typography className='text-footer' variant='subtitle2'>Donare Corporation © 2023</Typography>
-              </Grid>
-            </Grid>
-            }
+  if (token !== "") {
+    footerComponent =
+      <Grid container direction='row' justifyContent='center' alignItems='center'>
+        <Grid className='content' item alignItems='center' xs={12} >
 
 
 
-            return (
-              <>
-                {footerComponent}
-              </>
-            );
-          };
+          <Typography className='text-footer' variant='subtitle2'>Suporte</Typography>
+          <Typography className='text-footer' variant='subtitle2'>Termos e Serviços</Typography>
+          <Typography className='text-footer' variant='subtitle2'>Diretrizes da Comunidade</Typography>
+          <Typography className='text-footer' variant='subtitle2'>Sobre-Nós</Typography>
+          <Typography className='text-footer' variant='subtitle2'>Dúvidas</Typography>
+
+
+        </Grid>
+
+        <Box className='content2'>
+          <Typography className='text-footer2' variant='subtitle2'>Donare Corporation © 2023</Typography>
+        </Box>
+
+
+
+      </Grid>
+  }
+
+
+
+  return (
+    <>
+      {footerComponent}
+    </>
+  );
+};
 
 export default Footer;

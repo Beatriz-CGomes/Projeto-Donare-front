@@ -82,7 +82,7 @@ function Login() {
 
         <Grid container direction='row' justifyContent='center' alignItems='center' className='bg-color'>
 
-            <Grid item alignItems='center' xs={6} >
+            <Grid item xs={5} >
                 <Box paddingX={10} className='login-top' >
 
                     <form onSubmit={onSubmit}>
@@ -120,12 +120,10 @@ function Login() {
                         </Link>
                     </Box>
 
-                    <Box display='flex' justifyContent='left' marginTop={1}>
-                        <Typography className='hr'> <hr></hr></Typography>
+                    <Box display='row' justifyContent='left' marginTop={1}>
+                        <Typography className='hr' style={{width : '1000px'}}> <hr></hr></Typography>
                     </Box>
-                    <Box>
-                        <Typography className='hr'> <hr></hr></Typography>
-                    </Box>
+                   
 
 
 
@@ -137,11 +135,10 @@ function Login() {
 
                 </Box>
             </Grid>
-            <Grid xs={4} className='imagem'>
+            <Grid item xs={7} className='imagem'>
             </Grid>
 
-            <Grid xs={2} >
-            </Grid>
+        
 
         </Grid >
     );

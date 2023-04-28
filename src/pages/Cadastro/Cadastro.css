@@ -6,10 +6,11 @@
 
 /* fundo*/
 .grid-form {
-    background-color:  rgb(233, 233, 233);
-    margin-top: 20px !important;
+    background-color:  #fffefead;
+    margin-top: 15px !important;
     border-radius: 15px !important;
     box-sizing: border-box !important;
+    margin-right: -5px!important;
 
 }
 
@@ -30,14 +31,14 @@
 
 /* selecionar */
 .text-form {
-    padding-top: -10px !important;
+    padding-top: 9px !important;
     color: rgb(61, 61, 61) !important;
     font-size: 12px !important;
     margin-left: 50px !important;
 }
 
 .text-form-foot {
-    padding-top: 5px !important;
+    padding-top: 5px!important;
     color: rgb(61, 61, 61) !important;
     font-size: 12px !important;
     margin-left: 50px !important;
@@ -90,8 +91,10 @@
 
 
 .imagemCadastro{
-    background-image: url('https://i.imgur.com/Hf1oG4o.png');
+    background-image: url('https://i.imgur.com/c8VK1bz.png');
     background-repeat: no-repeat;
-    width: 100vh;
+    width: 100vw;
     background-position: center;
+    background-size: cover;
+
 }
