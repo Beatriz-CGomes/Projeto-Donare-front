@@ -68,10 +68,10 @@ function ListaPostagem() {
           </CardHeader>
 
           <Menu anchorEl={menu} id='menu-opcoes' keepMounted open={abre} onClose={fechaMenu} TransitionComponent={Fade}>
-            <Link to=''>
+            <Link to={`/formPostagem/${post.id}`}>
             <MenuItem>Atualizar</MenuItem>
             </Link>
-            <Link to=''>
+            <Link to={`/deletarPostagem/${post.id}`}>
             <MenuItem>Deletar</MenuItem>
             </Link>
           </Menu>

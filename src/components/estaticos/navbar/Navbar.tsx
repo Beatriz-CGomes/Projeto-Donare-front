@@ -46,6 +46,7 @@ function Navbar() {
   var navbarComponent;
 
   if (token !== "") {
+    navbarComponent =
     <Box sx={{ flexGrow: 2 }}>
       <AppBar position="static" className="color">
         <Toolbar variant="dense" className="container">
