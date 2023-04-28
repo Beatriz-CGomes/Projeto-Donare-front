@@ -50,7 +50,7 @@ function ListaTemas() {
             <Box m={2} className="tamanho">
                 <Card variant="outlined">
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
+                        <Typography variant="h3" color="textSecondary" gutterBottom>
                             {tema.nome}
                         </Typography>
 

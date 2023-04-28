@@ -32,7 +32,7 @@ function App() {
             <Route path='/formTema' element={<CadastroTema />} />
             <Route path='/formTema/:id' element={<CadastroTema />} />
             <Route path='/deletarTema/:id' element={<DeletarTema />} />
-            <Route path="/post" element={<ListaPostagem/>}/>
+            <Route path="/posts" element={<ListaPostagem/>}/>
             <Route path="/formPostagem" element={<CadastroPost/>}/>
             <Route path="/formPostagem/:id" element={<CadastroPost/>}/>
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem/>}/>

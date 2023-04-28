@@ -143,7 +143,7 @@ function CadastroPost() {
 
                     <TextField  value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" name="titulo" label="Digite o titulo da sua postagem" variant="outlined" margin="normal" fullWidth />
                     <TextField  value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" name="texto" label="Digite o texto da sua postagem" variant="outlined"  margin="normal" fullWidth />
-                    <TextField  value={postagem.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="foto" name="foto" label="Insira o link da foto em nuvem" variant="outlined"  margin="normal" fullWidth />
+                    <TextField  value={postagem.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="imagem" name="imagem" label="Insira o link da foto em nuvem" variant="outlined"  margin="normal" fullWidth />
                     <TextField  value={postagem.marcacao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="marcacao" name="marcacao" label="Marque um usuário aqui" variant="outlined"  margin="normal" fullWidth />
 
                     <FormControl>

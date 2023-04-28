@@ -55,7 +55,7 @@ function Home() {
     return (
         <>
             <Grid direction="row" justifyContent="center" container className="bg-color">
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <Box className="box">
                         <Card variant="outlined" className="card">
                             <CardContent className="card-content">
@@ -95,12 +95,12 @@ function Home() {
                     </Box>
 
                 </Grid>
-                <Grid item xs={6} className="teste">
+                <Grid item xs={4} className="teste">
                     <ModalPost />
                     <ListaPostagem />
                 </Grid>
 
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <Card variant="outlined" className="card2">
                         <CardContent className="non-padding">
                             <Typography variant="h6" className="titulo">Últimas notícias Sobre ONGs:</Typography>

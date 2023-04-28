@@ -2,14 +2,16 @@ import { Avatar, Card, CardActions, CardContent, CardHeader } from '@material-ui
 import { CardMedia, IconButton, Typography, Menu, MenuItem,Fade } from '@material-ui/core'
 import React, { useState, useEffect } from 'react';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import Postagem from '../../../models/Postagem';
 import { useSelector } from "react-redux";
 import { useNavigate,Link } from 'react-router-dom'
 import { buscar } from '../../../services/Service';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import './ListaPost.css'
+import {toast} from 'react-toastify'
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -22,7 +24,16 @@ function ListaPostagem() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado para ter acesso')
+      toast.info('Você precisa estar logado para ter acesso a esse conteúdo', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       navigate('/login')
     }
   }, [token])
@@ -54,7 +65,7 @@ function ListaPostagem() {
   return (
     <>{
       posts.map(post => (
-        <Card variant='elevation'>
+        <Card variant='elevation' className='cor-cartao'>
           <CardHeader
             avatar={<Avatar>D</Avatar>}
             title={<Typography>{post.titulo}</Typography>}
@@ -85,16 +96,16 @@ function ListaPostagem() {
           </CardContent>
 
           <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
+            <IconButton aria-label="Curtir">
               <FavoriteIcon />
             </IconButton>
 
-            <IconButton aria-label="share">
-              <ShareIcon />
+            <IconButton aria-label="Doar">
+              <MonetizationOnIcon />
             </IconButton>
 
-            <IconButton>
-              <ExpandMoreIcon />
+            <IconButton aria-label='Comentarios'>
+              <ChatBubbleIcon />
             </IconButton>
 
           </CardActions>

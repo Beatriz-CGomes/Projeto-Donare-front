@@ -36,12 +36,13 @@ a{
 
 /*Card esquerda*/
 .card {
+  background-color: #fff !important;
   min-width: 30vh !important;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
-  border: 2px solid orange !important;
+  /* border: 2px solid orange !important; */
   border-radius: 12px !important;
 }
 
@@ -69,8 +70,8 @@ a{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 10px 15px 10px 10px;
-  border: 2px solid orange !important; 
+  margin: 10px 15px 10px 20px;
+  /* border: 2px solid orange !important;  */
   border-radius: 12px !important;
 }
 
