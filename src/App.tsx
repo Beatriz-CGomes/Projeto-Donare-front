@@ -10,11 +10,17 @@ import ListaTemas from './components/temas/listaTemas/ListaTemas'
 import DeletarTema from './components/temas/deletarTema/DeletarTema'
 import { Provider } from 'react-redux'
 import store from './store/Store'
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
+import ListaPostagem from './components/postagens/listarPost/ListaPost'
+import CadastroPost from './components/postagens/cadastrarPost/CadastroPost'
+import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem'
 
 function App() {
   return (
     <>
       <Provider store={store}>
+        <ToastContainer/>
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -26,6 +32,11 @@ function App() {
             <Route path='/formTema' element={<CadastroTema />} />
             <Route path='/formTema/:id' element={<CadastroTema />} />
             <Route path='/deletarTema/:id' element={<DeletarTema />} />
+            <Route path="/post" element={<ListaPostagem/>}/>
+            <Route path="/formPostagem" element={<CadastroPost/>}/>
+            <Route path="/formPostagem/:id" element={<CadastroPost/>}/>
+            <Route path="/deletarPostagem/:id" element={<DeletarPostagem/>}/>
+
           </Routes>
           {<Footer />}
         </BrowserRouter>
