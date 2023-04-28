@@ -4,22 +4,24 @@
     background-color: rgb(233, 233, 233);
 }
 
+/* fundo*/
 .grid-form {
-    padding-top: 30px;
-    padding-bottom: 80px;
-    padding-left: 10px;
-    padding-right: 20px;
+    background-color:  rgb(233, 233, 233);
+    margin-top: 20px !important;
+    border-radius: 15px !important;
+    box-sizing: border-box !important;
+
 }
 
 /* cadastra-se*/
-s .text-titulo {
+.text-titulo {
     color: rgb(61, 61, 61);
     font-family: 'Calibri' !important;
-    font-size: 60px!important;
+    font-size: 40px !important;
     text-align: left !important;
-    margin-left: 50px !important;
-    padding-bottom: 20px;
-    font-weight: bold!important;
+    margin-left: 40px !important;
+    padding-bottom: 20px !important;
+    font-weight: bold !important;
 }
 
 .select {
@@ -30,19 +32,26 @@ s .text-titulo {
 .text-form {
     padding-top: -10px !important;
     color: rgb(61, 61, 61) !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
+    margin-left: 50px !important;
 }
 
 .text-form-foot {
     padding-top: 5px !important;
     color: rgb(61, 61, 61) !important;
     font-size: 12px !important;
+    margin-left: 50px !important;
 }
 
+/* Bordas do formulário */
 .formulario .MuiOutlinedInput-root {
     border-radius: 14px !important;
+    width: 450px !important;
+    margin-left: 50px !important;
+
 }
 
+/* botão entrar */
 .botao {
     height: 50px;
     width: 100%;
@@ -50,19 +59,25 @@ s .text-titulo {
     color: rgb(255, 255, 255) !important;
     font-weight: 'bold' !important;
     border-radius: 55px !important;
+    margin-left: 50px !important;
+    width: 450px !important;
 }
 
+/* botão entrar  - CADASTRAR*/
 .link-botao {
     color: rgb(255, 255, 255);
 }
 
+/* já tem uma conta */
 .login-text {
     padding-top: 15px;
     color: #363636;
     font-family: "Calibri";
     font-size: 17px !important;
+    margin-left: 145px !important;
 }
 
+/* fazer login */
 .login-link {
     padding-top: 12px;
     color: rgb(230, 107, 7);
@@ -70,4 +85,13 @@ s .text-titulo {
     font-weight: bold !important;
     margin-left: 12px !important;
     font-size: 22px !important;
+    margin-right: 50px !important;
+}
+
+
+.imagemCadastro{
+    background-image: url('https://i.imgur.com/Hf1oG4o.png');
+    background-repeat: no-repeat;
+    width: 100vh;
+    background-position: center;
 }

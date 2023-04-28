@@ -64,13 +64,11 @@ function Cadastrar() {
 
     return (
         <Grid container className="bg-page" justifyContent="space-around">
-            <Grid item xs={6}>
+ 
+             
+            <Grid item xs={7} className="imagemCadastro" />
 
-            </Grid>
-
-
-
-            <Grid item xs={4} className="grid-form" alignItems="center">
+            <Grid item xs={5} className="grid-form" alignItems="center">
 
                 <form onSubmit={cadastrar}>
                     <Typography  variant="h6" className="text-titulo" align="left">Cadastre-se</Typography>
@@ -82,9 +80,9 @@ function Cadastrar() {
                             name="controlled-radio-buttons-group"
                             value={user.tipo}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} >
-                            <FormControlLabel control={<Radio />} value="0" label="Admin" />
-                            <FormControlLabel control={<Radio />} value="1" label="Pessoa física" />
-                            <FormControlLabel control={<Radio />} value="2" label="Pessoa jurídica" />
+                            <FormControlLabel control={<Radio />} value="0" label="Admin"  style={{marginLeft : '40px'}}/>
+                            <FormControlLabel control={<Radio />} value="1" label="Pessoa física" style={{marginLeft : '-1px'}} />
+                            <FormControlLabel control={<Radio />} value="2" label="Pessoa jurídica" style={{marginLeft : '-4px'}} />
                         </RadioGroup>
                     </FormControl>
 
@@ -122,6 +120,9 @@ function Cadastrar() {
                 </form>
 
             </Grid>
+
+           
+
         </Grid>
     );
 }

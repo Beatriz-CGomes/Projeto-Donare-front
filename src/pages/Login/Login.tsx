@@ -17,7 +17,7 @@ function Login() {
 
     const dispatch = useDispatch();
     const [token, setToken] = useState('');
-    
+
 
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
@@ -110,7 +110,7 @@ function Login() {
 
 
 
-                    <Box display='flex' justifyContent='left' alignItems="center"  className='fundo'>
+                    <Box display='flex' justifyContent='left' alignItems="center" className='fundo'>
                         <GoogleIcon className='redes' />
                         <Typography gutterBottom align='center' className='google' >Continuar com o Google </Typography>
 
@@ -120,10 +120,11 @@ function Login() {
             </Grid>
             <Grid xs={4} className='imagem'>
             </Grid>
+
+            <Grid xs={2} >
+            </Grid>
+
         </Grid >
-
-
-
     );
 }
 
