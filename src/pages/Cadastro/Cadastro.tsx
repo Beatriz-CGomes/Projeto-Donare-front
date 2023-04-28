@@ -67,10 +67,13 @@ function Cadastrar() {
             <Grid item xs={6}>
 
             </Grid>
-            <Grid item xs={6} className="grid-form" alignItems="center">
+
+
+
+            <Grid item xs={4} className="grid-form" alignItems="center">
 
                 <form onSubmit={cadastrar}>
-                    <Typography className="text-titulo" align="center">Cadastre-se:</Typography>
+                    <Typography  variant="h6" className="text-titulo" align="left">Cadastre-se</Typography>
                     
                     <FormControl>
                         <FormLabel id="demo-controlled-radio-buttons-group" className="text-form">Selecione:</FormLabel>

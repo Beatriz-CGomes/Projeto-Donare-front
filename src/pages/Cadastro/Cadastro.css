@@ -11,22 +11,26 @@
     padding-right: 20px;
 }
 
-.text-titulo {
-    padding: 20px;
-    color: rgb(230, 107, 7) !important;
-    font-size: 40px !important;
-    font-weight: bold !important;
-    font-family: "Calibri" !important;
+/* cadastra-se*/
+s .text-titulo {
+    color: rgb(61, 61, 61);
+    font-family: 'Calibri' !important;
+    font-size: 60px!important;
+    text-align: left !important;
+    margin-left: 50px !important;
+    padding-bottom: 20px;
+    font-weight: bold!important;
 }
 
 .select {
     padding: 10px !important;
 }
 
+/* selecionar */
 .text-form {
-    padding-top: 5px !important;
+    padding-top: -10px !important;
     color: rgb(61, 61, 61) !important;
-    font-size: 16px !important;
+    font-size: 13px !important;
 }
 
 .text-form-foot {
@@ -42,9 +46,9 @@
 .botao {
     height: 50px;
     width: 100%;
-    background-color:  rgb(230, 107, 7) !important;
+    background-color: rgb(230, 107, 7) !important;
     color: rgb(255, 255, 255) !important;
-    font-weight: 'bold'!important;
+    font-weight: 'bold' !important;
     border-radius: 55px !important;
 }
 
@@ -56,14 +60,14 @@
     padding-top: 15px;
     color: #363636;
     font-family: "Calibri";
-    font-size: 17px;
+    font-size: 17px !important;
 }
 
 .login-link {
-    padding-top: 15px;
+    padding-top: 12px;
     color: rgb(230, 107, 7);
     font-family: "Calibri";
     font-weight: bold !important;
     margin-left: 12px !important;
-    font-size: 17px !important;
+    font-size: 22px !important;
 }
