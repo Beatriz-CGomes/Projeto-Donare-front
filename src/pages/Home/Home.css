@@ -65,11 +65,11 @@ a{
 
 /*Card direita*/
 .card2 {
-  min-width: 30vh !important;
+  max-width: 40vh !important;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 10px;
+  margin: 10px 15px 10px 10px;
   border: 2px solid orange !important; 
   border-radius: 12px !important;
 }
@@ -84,7 +84,7 @@ ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  text-align: start;
+  text-align: center;
 }
 
 ul li {

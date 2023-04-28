@@ -33,7 +33,7 @@ function ListaTemas() {
     return (
         <>
         {temas.map(tema=>(
-            <Box m={2}>
+            <Box m={2} className="tamanho">
                 <Card variant="outlined">
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>

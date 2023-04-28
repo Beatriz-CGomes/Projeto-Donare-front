@@ -9,6 +9,7 @@ import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import CadastroPost from "../../components/postagens/cadastrarPost/CadastroPost";
 import ModalPost from "../../components/postagens/modalPost/ModalPost";
+import ListaPostagem from "../../components/postagens/listarPost/ListaPost";
 
 
 function Home() {
@@ -68,6 +69,7 @@ function Home() {
                 </Grid>
                 <Grid item xs={6} className="teste">
                         <ModalPost/>
+                        <ListaPostagem/>
                 </Grid>
 
                 <Grid item xs={3}>
@@ -78,7 +80,7 @@ function Home() {
                             <Box className="padding-top-bot padding-left clickable">
                                 <a href="https://www.jornaldebarueri.com.br/terceiro-setor/agencia-do-bem-lanca-edital-para-selecao-de-ongs-incluindo-barueri/"
                                     target="_blank">
-                                    <Typography variant="subtitle1">• Agência do Bem lança edital para seleção de ONGs ...</Typography></a>
+                                    <Typography variant="subtitle1">• Agência do Bem lança edital para seleção...</Typography></a>
                                     <Typography variant="subtitle2">Data: 22/04/2023</Typography>
                                 
                             </Box>
@@ -86,7 +88,7 @@ function Home() {
                             <Box className="padding-top-bot padding-left clickable">
                                 <a href="https://noticias.uol.com.br/ultimas-noticias/agencia-brasil/2023/04/23/ong-oferece-oficinas-de-criacao-artistica-para-pessoas-lgbtqia.htm"
                                     target="_blank">
-                                    <Typography variant="subtitle1">• ONG oferece oficinas de criação artistica pra pessoas...</Typography></a>
+                                    <Typography variant="subtitle1">• ONG oferece oficinas de criação artistica...</Typography></a>
                                     <Typography variant="subtitle2" >Data: 18/04/2023</Typography>
                                 
                             </Box>
@@ -94,7 +96,7 @@ function Home() {
                             <Box className="padding-top-bot padding-left clickable">
                                 <a href="https://propmark.com.br/governo-empresas-e-ongs-onde-esta-a-confianca-dos-brasileiros/"
                                     target="_blank">
-                                    <Typography variant="subtitle1">• Governo,Empresas e Ongs: Onde está a confiança...</Typography></a>
+                                    <Typography variant="subtitle1">• Governo,Empresas e Ongs: Onde está a...</Typography></a>
                                     <Typography variant="subtitle2" >Data: 29/04/2023</Typography>
                                 
                             </Box>
@@ -102,14 +104,14 @@ function Home() {
                             <Box className="padding-top-bot padding-left clickable">
                                 <a href="https://www.metropoles.com/colunas/e-o-bicho/conheca-o-trabalho-de-ongs-que-protegem-a-fauna-do-cerrado-brasiliense"
                                     target="_blank">
-                                    <Typography variant="subtitle1">• Conheça o trabalho de ONGs que protegem a fauna ...</Typography></a>
+                                    <Typography variant="subtitle1">• Conheça o trabalho de ONGs que protegem...</Typography></a>
                                     <Typography variant="subtitle2">Data: 22/04/2023</Typography>
                             </Box>
 
                             <Box className="padding-top-bot padding-left clickable">
                                 <a href="https://observatorio3setor.org.br/observatorio-em-movimento/parcerias-entre-grandes-ongs-e-empreendedores-sociais-independentes-ainda-sao-raras/"
                                     target="_blank">
-                                    <Typography variant="subtitle1">• Parceria entre grandes ONGs e empreendedores ...</Typography></a>
+                                    <Typography variant="subtitle1">• Parceria entre grandes ONGs e empreende...</Typography></a>
                                     <Typography variant="subtitle2">Data: 22/04/2023</Typography>
                                 
                             </Box>

@@ -1,25 +1,21 @@
 import React from 'react';
 import './Footer.css';
+import { Grid, Typography } from '@material-ui/core';
+import { Box } from '@mui/material';
 
 function Footer() {
   return (
-    <div className="footer">
-      <div className="container">
-        <div className="row">
-          <div className="lista-item">
-            <ul className="lista">
-              <li className="lista-item"><a href="#">Termos de Serviço</a></li>
-              <li className="lista-item"><a href="#">Diretrizes da Comunidade</a></li>
-              <li className="lista-item"><a href="#">Sobre</a></li>
-              <li className="lista-item"><a href="#">Dúvidas</a></li>
-            </ul>
-            <div className="nome">
-              Donare Corporation © 2023
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Grid className='rodape' container direction='row-reverse' justifyContent='center' alignItems='center'>
+          <Grid className='content' item alignItems='center' xs={12}>
+              <Typography className='text-footer' variant='subtitle2'>Termos de Serviço</Typography>
+              <Typography className='text-footer' variant='subtitle2'>Diretrizes da Comunidade</Typography>
+              <Typography className='text-footer' variant='subtitle2'>Sobre</Typography>
+              <Typography className='text-footer' variant='subtitle2'>Dúvidas</Typography>
+              <Typography className='text-footer' variant='subtitle2'>Donare Corporation © 2023</Typography>
+          </Grid>
+      </Grid>
+    </>
   );
 };
 

@@ -44,21 +44,21 @@ function Navbar() {
 
             <Link to='/posts'>
             <Box mx={1} className="dis-flex-row conteudoNav">
-              <PostAddIcon />
+              <PostAddIcon className="icones"/>
               <Typography className="texto-navbar" variant="h6">Postagens</Typography>
             </Box>
             </Link>
 
             <Link to='/temas'>
             <Box mx={1} className="dis-flex-row conteudoNav">
-              <AssignmentIcon />
+              <AssignmentIcon className="icones"/>
               <Typography className="texto-navbar" variant="h6">Temas</Typography>
             </Box>
             </Link>
 
 
             <Box mx={1} className="dis-flex-row cursor conteudoNav" onClick={goLogout}>
-              <LogoutIcon />
+              <LogoutIcon className="icones"/>
               <Typography className="texto-navbar" variant="h6">Logout</Typography>
             </Box>
 
