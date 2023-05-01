@@ -80,10 +80,11 @@ function Login() {
 
     return (
 
-        <Grid container direction='row' justifyContent='center' alignItems='center' className='bg-color'>
+        <Grid container justifyContent='center' alignItems='center' className='bg-color'>
+            <Grid item xs={1}></Grid>
 
-            <Grid item xs={5} >
-                <Box paddingX={10} className='login-top' >
+            <Grid item xs={4} className='form-login login-top'>
+               
 
                     <form onSubmit={onSubmit}>
                         <Typography variant="h6" className='texto1'>Conecte-se</Typography>
@@ -100,7 +101,7 @@ function Login() {
 
                         <Box textAlign='center' marginTop={2}>
                             <Typography variant="h6" className='texto2' style={{ fontWeight: 'bold' }}>Esqueceu a senha? </Typography>
-                            <Button type='submit' className='buttom'>  Entrar
+                            <Button type='submit' className='buttom'>Entrar
                             </Button>
                         </Box>
 
@@ -116,12 +117,12 @@ function Login() {
 
 
                         <Link to="/cadastrar" style={{ textDecoration: "none" }}>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='chamada2'>Cadastra-se </Typography>
+                            <Typography variant='subtitle1' gutterBottom align='center' className='chamada2'>Cadastre-se </Typography>
                         </Link>
                     </Box>
 
                     <Box display='row' justifyContent='left' marginTop={1}>
-                        <Typography className='hr' style={{width : '1000px'}}> <hr></hr></Typography>
+                        <Typography className='hr' style={{width : '1000px'}}> <hr className='hr'/></Typography>
                     </Box>
                    
 
@@ -132,8 +133,6 @@ function Login() {
                         <Typography gutterBottom align='center' className='google' >Continuar com o Google </Typography>
 
                     </Box>
-
-                </Box>
             </Grid>
             <Grid item xs={7} className='imagem'>
             </Grid>

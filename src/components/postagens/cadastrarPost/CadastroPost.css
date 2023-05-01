@@ -1,3 +1,12 @@
-.testando {
-  margin: 10px !important;
+.form-post{
+  background-color: #dacfcf44;
+  margin: 15px auto;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.concluir{
+  background-color: #fd841f !important;
+  font-weight: bold !important;
+  color: #fff !important;
 }

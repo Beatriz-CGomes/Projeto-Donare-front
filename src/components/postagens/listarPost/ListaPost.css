@@ -2,3 +2,20 @@
    border: 2px solid orange;
    margin-top: 10px !important;
 }
+
+.post-icones{
+   display: flex;
+   justify-content: space-around;
+}
+
+.curtido:active{
+   color: red !important;
+}
+
+
+.foto{
+   background-color: red !important;
+   width: 50px !important;
+   height: 50px !important;
+   border-radius: 50%;
+}

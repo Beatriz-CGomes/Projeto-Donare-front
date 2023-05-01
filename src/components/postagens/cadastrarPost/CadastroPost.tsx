@@ -8,6 +8,7 @@ import { buscar, buscarId, postar, atualizar } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from './../../../store/tokens/TokensReducer';
 import { toast } from 'react-toastify';
+import { Box } from '@mui/material';
 
 function CadastroPost() {
     let navigate = useNavigate();
@@ -137,7 +138,7 @@ function CadastroPost() {
     
     return (
         <>
-            <Container maxWidth="xl" >
+            <Container maxWidth="sm" className='form-post'>
                 <form onSubmit={onSubmit}>
                     <Typography variant="h4" align="center">Crie sua Postagem</Typography>
 
@@ -162,7 +163,7 @@ function CadastroPost() {
                         </Select>
                         <FormHelperText>Escolha uma ODS para a postagem</FormHelperText>
                         
-                        <Button type='submit' variant='contained'>
+                        <Button variant='contained' type='submit' className='concluir'>
                                 Concluir
                         </Button>
 

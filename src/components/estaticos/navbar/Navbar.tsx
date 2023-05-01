@@ -10,11 +10,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
 import { addToken } from "../../../store/tokens/Actions";
 import { toast } from "react-toastify";
+import PersonIcon from '@material-ui/icons/Person';
 
 
 function Navbar() {
@@ -63,17 +63,17 @@ function Navbar() {
               </Box>
             </Link>
 
-            <Link to='/posts'>
-              <Box mx={1} className="dis-flex-row conteudoNav">
-                <PostAddIcon className="icones" />
-                <Typography className="texto-navbar" variant="h6">Postagens</Typography>
-              </Box>
-            </Link>
-
             <Link to='/temas'>
               <Box mx={1} className="dis-flex-row conteudoNav">
                 <AssignmentIcon className="icones" />
                 <Typography className="texto-navbar" variant="h6">Temas</Typography>
+              </Box>
+            </Link>
+
+            <Link to='/perfil'>
+              <Box mx={1} className="dis-flex-row conteudoNav">
+                <PersonIcon className="icones" />
+                <Typography className="texto-navbar" variant="h6">Perfil</Typography>
               </Box>
             </Link>
 
@@ -82,7 +82,6 @@ function Navbar() {
               <LogoutIcon className="icones" />
               <Typography className="texto-navbar" variant="h6">Logout</Typography>
             </Box>
-
           </Box>
 
           <Box className="barraPesquisa">

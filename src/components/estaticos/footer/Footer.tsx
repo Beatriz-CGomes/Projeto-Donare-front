@@ -14,7 +14,7 @@ function Footer() {
 
   if (token !== "") {
     footerComponent =
-      <Grid container direction='row' justifyContent='center' alignItems='center'>
+      <Grid container className='rodape' direction='row' justifyContent='center' alignItems='center'>
         <Grid className='content' item alignItems='center' xs={12} >
 
 
@@ -28,7 +28,7 @@ function Footer() {
 
         </Grid>
 
-        <Box className='content2'>
+        <Box className='content2' justifyContent='center'>
           <Typography className='text-footer2' variant='subtitle2'>Donare Corporation © 2023</Typography>
         </Box>
 

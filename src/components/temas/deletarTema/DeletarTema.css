@@ -1,0 +1,16 @@
+.deletar-tema{
+    background-color: #dacfcf44 !important;
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+    margin: 0 auto;
+}
+
+.opcao-sim{
+    background-color: #fd841f !important;
+    font-weight: bold !important;
+}
+
+.opcao-nao{
+   border: 1px solid #fd841f !important;
+}

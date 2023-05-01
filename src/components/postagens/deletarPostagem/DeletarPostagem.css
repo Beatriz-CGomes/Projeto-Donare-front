@@ -1,0 +1,20 @@
+.deletar-post{
+    background-color: #dacfcf44 !important;
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+    margin: 0 auto;
+}
+
+.opcoes-sim{
+    background-color: #fd841f !important;
+    font-weight: bold !important;
+}
+
+.texto-negrito{
+    font-weight: bold !important;
+}
+
+.opcoes-nao{
+    border: 1px solid #fd841f !important;
+}

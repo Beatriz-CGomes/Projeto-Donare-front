@@ -1,0 +1,27 @@
+.form-tema{
+    background-color: #dacfcf44;
+    margin: 15px auto;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.texto-titulo{
+    color: black !important;
+}
+
+.botoes-sim-nao{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.finalizar{
+    background-color: #fd841f !important;
+    font-weight: bold !important;
+    color: #fff;
+}
+
+.cancelar{
+    border-color: #fd841f !important;
+}

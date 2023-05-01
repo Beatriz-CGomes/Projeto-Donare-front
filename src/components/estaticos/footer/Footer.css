@@ -8,11 +8,11 @@
 }
 
 .content {
-  display: row;
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   background-color: rgb(230, 107, 7) !important;
-  height: 50px !important;
+  height: 24px !important;
 }
 
 .content2 {
@@ -31,19 +31,17 @@
 
 .text-footer{
   color: #fff;
-  justify-content: center !important;
+  display: flex;
+  justify-content: space-around !important ;
   font-family: 'Calibri' !important;
   padding: -8px !important;
   display: inline-flex !important;
-  margin-left: 120px !important;
-  margin-right: 18px !important;
-  margin-top: 10px !important;
   font-weight: bold !important;
 }
 
 .text-footer2 {
   color: #000;
-  margin-left: 555px !important;
+  text-align: center !important;
   font-family: 'Calibri' !important;
 }
 

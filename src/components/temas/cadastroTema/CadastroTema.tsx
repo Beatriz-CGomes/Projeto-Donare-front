@@ -1,11 +1,13 @@
 import { Container, Typography, TextField, Button } from "@material-ui/core";
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Tema from "../../../models/Tema";
 import { atualizar, buscarId, postar } from "../../../services/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/TokensReducer";
 import { toast } from "react-toastify";
+import './CadastroTema.css'
+import { Box } from "@mui/material";
 
 function CadastroTema() {
 
@@ -131,14 +133,23 @@ function CadastroTema() {
     }
     return (
         <>
-            <Container maxWidth="sm" className="topo">
+            <Container maxWidth="sm" className="form-tema">
                 <form onSubmit={enviar}>
-                    <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
+                    <Typography variant="h3" className="texto-titulo" component="h1" align="center" >Formulário de cadastro tema</Typography>
                     <TextField value={tema.nome} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedTema(e)} id="nome" name="nome" label="tema" variant="outlined" margin="normal" fullWidth/>
                     <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
-                    <Button type="submit" variant="contained" color="primary">
+                    
+                    <Box className="botoes-sim-nao">
+                    <Button type="submit" variant="contained" className="finalizar">
                         Finalizar
                     </Button>
+
+                    <Link to='/temas'>
+                    <Button variant="outlined" className="cancelar">
+                        Cancelar
+                    </Button>
+                    </Link>
+                    </Box>
                 </form>
             </Container>
         </>
