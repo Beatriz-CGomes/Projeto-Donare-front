@@ -1,14 +1,20 @@
 .tamanho {
-    min-height: calc(100vh - 26px) !important;
+    min-height: calc(30vh - 26px) !important;
 }
 
 .text-align {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px !important;
+    letter-spacing: 1px;
+    color: black !important;
+}
+
+.subtitle1{
+    text-align: center;
 }
 
 .imagem-ODS {
-    margin-top: 30px;
+    margin-top: 50px !important;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -26,4 +32,8 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
+}
+
+.card{
+    margin-bottom: 50px !important;
 }
