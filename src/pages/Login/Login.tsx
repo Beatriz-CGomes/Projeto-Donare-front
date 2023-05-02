@@ -8,7 +8,7 @@ import UserLogin from '../../models/UserLogin';
 
 import './Login.css';
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/Actions';
+import { addID, addToken } from '../../store/tokens/Actions';
 import { toast } from "react-toastify";
 
 
@@ -31,6 +31,19 @@ function Login() {
         token: ''
     });
 
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        nickname: '',
+        tipo: 1,
+        token: ''
+
+    })
+
+
     function updateModel(e: ChangeEvent<HTMLInputElement>) {
         setUserLogin({
             ...userLogin,
@@ -45,13 +58,24 @@ function Login() {
         }
     }, [token])
 
+    useEffect(() => {
+        if (respUserLogin.token !== "") {
+            console.log("Token:" + respUserLogin.token)
+            console.log("ID: "+respUserLogin.id)
+
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addID(respUserLogin.id.toString()))
+            history('/home')
+        }
+    }, [respUserLogin.token])
+
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
 
         try {
 
-            await login(`/usuarios/logar`, userLogin, setToken)
+            await login(`/usuarios/logar`, userLogin, setRespUserLogin)
 
             toast.info('Usuário logado com sucesso', {
                 position: "top-right",
@@ -62,7 +86,7 @@ function Login() {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-              });
+            });
         } catch (error) {
 
             toast.info('Dados do usuário incorretos, erro ao logar', {
@@ -74,7 +98,7 @@ function Login() {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-              });
+            });
         }
     }
 
@@ -84,60 +108,60 @@ function Login() {
             <Grid item xs={1}></Grid>
 
             <Grid item xs={4} className='form-login login-top'>
-               
-
-                    <form onSubmit={onSubmit}>
-                        <Typography variant="h6" className='texto1'>Conecte-se</Typography>
 
 
-                        <Typography className='texto0'>E-mail ou telefone </Typography>
-                        <TextField className='input-form' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='usuario' variant='outlined' margin='normal' name='usuario' fullWidth />
+                <form onSubmit={onSubmit}>
+                    <Typography variant="h6" className='texto1'>Conecte-se</Typography>
 
 
-                        <Typography className='texto0'>Senha</Typography>
-                        <TextField className='input-form' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' type='password' variant='outlined' margin='normal' fullWidth name='senha' />
+                    <Typography className='texto0'>E-mail ou telefone </Typography>
+                    <TextField className='input-form' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='usuario' variant='outlined' margin='normal' name='usuario' fullWidth />
+
+
+                    <Typography className='texto0'>Senha</Typography>
+                    <TextField className='input-form' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' type='password' variant='outlined' margin='normal' fullWidth name='senha' />
 
 
 
-                        <Box textAlign='center' marginTop={2}>
-                            <Typography variant="h6" className='texto2' style={{ fontWeight: 'bold' }}>Esqueceu a senha? </Typography>
-                            <Button type='submit' className='buttom'>Entrar
-                            </Button>
-                        </Box>
-
-
-                    </form>
-
-
-                    <Box display='flex' justifyContent='left' marginTop={3}>
-
-                        <Box>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='chamada1'>Não tem uma conta? </Typography>
-                        </Box>
-
-
-                        <Link to="/cadastrar" style={{ textDecoration: "none" }}>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='chamada2'>Cadastre-se </Typography>
-                        </Link>
+                    <Box textAlign='center' marginTop={2}>
+                        <Typography variant="h6" className='texto2' style={{ fontWeight: 'bold' }}>Esqueceu a senha? </Typography>
+                        <Button type='submit' className='buttom'>Entrar
+                        </Button>
                     </Box>
 
-                    <Box display='row' justifyContent='left' marginTop={1}>
-                        <Typography className='hr' style={{width : '1000px'}}> <hr className='hr'/></Typography>
+
+                </form>
+
+
+                <Box display='flex' justifyContent='left' marginTop={3}>
+
+                    <Box>
+                        <Typography variant='subtitle1' gutterBottom align='center' className='chamada1'>Não tem uma conta? </Typography>
                     </Box>
-                   
+
+
+                    <Link to="/cadastrar" style={{ textDecoration: "none" }}>
+                        <Typography variant='subtitle1' gutterBottom align='center' className='chamada2'>Cadastre-se </Typography>
+                    </Link>
+                </Box>
+
+                <Box display='row' justifyContent='left' marginTop={1}>
+                    <Typography className='hr' style={{ width: '1000px' }}> <hr className='hr' /></Typography>
+                </Box>
 
 
 
-                    <Box display='flex' justifyContent='left' alignItems="center" className='fundo'>
-                        <GoogleIcon className='redes' />
-                        <Typography gutterBottom align='center' className='google' >Continuar com o Google </Typography>
 
-                    </Box>
+                <Box display='flex' justifyContent='left' alignItems="center" className='fundo'>
+                    <GoogleIcon className='redes' />
+                    <Typography gutterBottom align='center' className='google' >Continuar com o Google </Typography>
+
+                </Box>
             </Grid>
             <Grid item xs={7} className='imagem'>
             </Grid>
 
-        
+
 
         </Grid >
     );

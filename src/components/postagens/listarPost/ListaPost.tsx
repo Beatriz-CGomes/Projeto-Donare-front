@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { useNavigate,Link, useParams } from 'react-router-dom'
 import { atualizar, buscar } from '../../../services/Service';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { TokenState } from '../../../store/tokens/TokensReducer';
+import { UserState, reducer } from '../../../store/tokens/TokensReducer';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import './ListaPost.css'
 import {toast} from 'react-toastify'
@@ -21,7 +21,7 @@ function ListaPostagem() {
 
   const [postagem,setPostagem] = useState<Postagem>()
 
-  const token = useSelector<TokenState,TokenState['tokens']>(
+  const token = useSelector<UserState,UserState['tokens']>(
     (state) => state.tokens
   )
 
@@ -83,7 +83,7 @@ function ListaPostagem() {
         <Card variant='elevation' className='cor-cartao'>
          <CardHeader
             avatar={<img src="https://i.imgur.com/iAIRTMo.png" alt="foto" className='foto' />}
-            title={<Typography>{post.titulo}</Typography>}
+            title={<Typography>{post.usuario?.nome}</Typography>}
             subheader={<Typography>{post.tema?.nome}</Typography>}
             action={
               <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true'onClick={abreMenu}>
@@ -104,6 +104,7 @@ function ListaPostagem() {
           <CardMedia image="https://i.imgur.com/iAIRTMo.png" />
 
           <CardContent>
+            <Typography variant='body1'>{post.titulo}</Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {post.texto}
             </Typography>

@@ -11,7 +11,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/TokensReducer";
+import { UserState } from "../../../store/tokens/TokensReducer";
 import { addToken } from "../../../store/tokens/Actions";
 import { toast } from "react-toastify";
 import PersonIcon from '@material-ui/icons/Person';
@@ -19,7 +19,7 @@ import PersonIcon from '@material-ui/icons/Person';
 
 function Navbar() {
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 
