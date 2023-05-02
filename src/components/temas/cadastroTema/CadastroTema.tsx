@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import Tema from "../../../models/Tema";
 import { atualizar, buscarId, postar } from "../../../services/Service";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/TokensReducer";
+import { UserState } from "../../../store/tokens/TokensReducer";
 import { toast } from "react-toastify";
 import './CadastroTema.css'
 import { Box } from "@mui/material";
@@ -14,7 +14,7 @@ function CadastroTema() {
     let navigate = useNavigate()
     const {id} = useParams <{id: string}>()
 
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
  

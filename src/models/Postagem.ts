@@ -1,14 +1,16 @@
 import Tema from "./Tema";
+import User from "./User";
 
-interface Postagem{
+interface Postagem {
     id: number;
-    titulo:string;
+    titulo: string;
     texto: string;
-    curtidas: number|null;
+    curtidas: number | null;
     imagem: string;
     marcacao: string;
-    doacao:string;
-    tema: Tema| null
+    doacao: string;
+    tema: Tema | null;
+    usuario: User | null
 }
 
 export default Postagem;

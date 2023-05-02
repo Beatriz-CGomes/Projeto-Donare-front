@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { buscarId, deletarId } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/TokensReducer';
+import { UserState } from '../../../store/tokens/TokensReducer';
 import { toast } from "react-toastify";
 
 
@@ -15,7 +15,7 @@ function DeletarTema() {
   let navigate = useNavigate();
   const { id } = useParams<{id: string}>();
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
 );
 

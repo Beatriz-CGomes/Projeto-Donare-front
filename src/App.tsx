@@ -15,6 +15,7 @@ import { ToastContainer } from 'react-toastify'
 import ListaPostagem from './components/postagens/listarPost/ListaPost'
 import CadastroPost from './components/postagens/cadastrarPost/CadastroPost'
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem'
+import Perfil from './pages/Perfil/Perfil'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path="/cadastrar" element={<Cadastro />} />
             <Route path='/home' element={<Home />} />
+            <Route path='/perfil' element={<Perfil/>}/>
             <Route path='/temas' element={<ListaTemas />} />
             <Route path='/formTema' element={<CadastroTema />} />
             <Route path='/formTema/:id' element={<CadastroTema />} />
