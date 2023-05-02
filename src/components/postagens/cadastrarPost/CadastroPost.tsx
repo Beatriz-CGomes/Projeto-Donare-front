@@ -6,7 +6,7 @@ import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import { buscar, buscarId, postar, atualizar } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from './../../../store/tokens/TokensReducer';
+import { UserState } from './../../../store/tokens/TokensReducer';
 import { toast } from 'react-toastify';
 import { Box } from '@mui/material';
 
@@ -14,7 +14,7 @@ function CadastroPost() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
       );
 
@@ -50,6 +50,7 @@ function CadastroPost() {
         marcacao:'',
         doacao: '',
         tema: null,
+        usuario:null
     })
 
     useEffect(() => { 

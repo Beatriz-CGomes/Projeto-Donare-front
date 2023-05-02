@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Tema from "../../../models/Tema";
 import { buscar } from "../../../services/Service";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/TokensReducer";
+import { UserState } from "../../../store/tokens/TokensReducer";
 import { toast } from "react-toastify";
 import './ListaTemas.css'
 import AddIcon from '@material-ui/icons/Add';
@@ -14,7 +14,7 @@ function ListaTemas() {
     const [temas, setTemas] = useState<Tema[]>([])
     let navigate = useNavigate()
 
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 

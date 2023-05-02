@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, Button, Card, CardActions, CardContent } from "@material-ui/core";
 import { Collapse, Grid, IconButton, Paper, Typography } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -11,13 +11,49 @@ import CadastroPost from "../../components/postagens/cadastrarPost/CadastroPost"
 import ModalPost from "../../components/postagens/modalPost/ModalPost";
 import ListaPostagem from "../../components/postagens/listarPost/ListaPost";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../store/tokens/TokensReducer";
+import { UserState } from "../../store/tokens/TokensReducer";
 import { toast } from "react-toastify";
+import User from "../../models/User";
+import { buscarId } from "../../services/Service";
 
 
 function Home() {
-
+    
     let navigate = useNavigate()
+
+    const id = useSelector<UserState,UserState['id']>(
+        (state)=>state.id
+    )
+
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    );
+
+    const [user,setUser] = useState<User>({
+        id: +id,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        nickname:'',
+        tipo: 1
+    })
+
+    //pegar os dados do usuario pelo ID:
+    async function findById(id:string) {
+        await buscarId(`/usuarios/${id}`,setUser,{
+            headers:{
+                'Authorization':token
+            }
+        })
+    }
+
+    useEffect(()=>{
+        if(id !== undefined){
+            findById(id)
+        }
+    },[id])
+
 
     //variaveis para a expansão do card
     const [expanded, setExpanded] = React.useState(false)
@@ -26,13 +62,6 @@ function Home() {
     const clickExpandir = () => {
         setExpanded(!expanded);
     }
-
-
-    const token = useSelector<TokenState, TokenState["tokens"]>(
-        (state) => state.tokens
-    );
-
-
 
     useEffect(() => {
         if (token === '') {
@@ -60,9 +89,9 @@ function Home() {
                         <Card variant="outlined" className="card">
                             <CardContent className="card-content">
                                 <Avatar className="icons padding-top-bot">D</Avatar>
-                                <Typography variant="h5" className="padding-top-bot titulo">Nome do usuário</Typography>
-                                <Typography className="padding-top-bot" color="textSecondary">Nickname do Usuario</Typography>
-                                <Typography className="padding-top-bot" color="textSecondary">Usuário Tipo 1</Typography>
+                                <Typography variant="h5" className="padding-top-bot titulo">{user.nome}</Typography>
+                                <Typography className="padding-top-bot" color="textSecondary">{user.nickname}</Typography>
+                                <Typography className="padding-top-bot" color="textSecondary">Tipo: {user.tipo}</Typography>
                             </CardContent>
 
                             <CardActions className="box">

@@ -6,7 +6,7 @@ interface UserLogin {
     foto: string;
     nickname: string;
     tipo: number;
-    token?: string | null;
+    token: string;
 }
 
 export default UserLogin;
