@@ -121,7 +121,7 @@ function Cadastrar() {
                     <TextField className="formulario" value={verificarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => verificaSenhaHandle(e)} type="password" name="confirmaSenha" id='confirmaSenha' variant="outlined" margin="normal" fullWidth />
 
                     <Typography className="text-form">Link da foto de perfil:</Typography>
-                    <TextField className="formulario" value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="nome" id="nome" variant="outlined" margin="normal" fullWidth />
+                    <TextField className="formulario" value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} name="foto" id="foto" variant="outlined" margin="normal" fullWidth />
 
                     <Typography className="text-form-foot">* campos obrigatórios</Typography>
 

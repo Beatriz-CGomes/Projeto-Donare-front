@@ -6,8 +6,10 @@ import { useSelector } from "react-redux";
 import { UserState } from "../../store/tokens/TokensReducer";
 import User from "../../models/User";
 import { buscarId } from "../../services/Service";
+import { Container, TextField, Typography } from "@material-ui/core";
+import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
 
-function Perfil(){
+function Perfil() {
 
     let history = useNavigate()
 
@@ -27,7 +29,7 @@ function Perfil(){
         usuario: '',
         senha: '',
         foto: '',
-        nickname:'',
+        nickname: '',
         tipo: 1,
     })
 
@@ -53,32 +55,37 @@ function Perfil(){
         }
     }, [id])
 
-    return(
+    return (
         <>
-        <Box className='card-principal'>
-            <Box className='card-container-imagem'>
-                <img className='card-imagem'
-                    src={ user.foto }
-                    alt={ user.nome } />
-            </Box>
+            <Container>
+                <Box className="perfil-content">
+                    <img src={user.foto} alt="foto usuário" className="imagem-perfil" />
+                    <EmojiEventsIcon className="trofeu"/>
 
-            <Box className='card-container-info'>
-                <Box>
-                    <h1>{ user.nome }</h1>
-                    <hr />
+                    <Box className="perfil-dados ">
+                        <Box className="perfil-campos">
+                            <Typography>Nome:</Typography>
+                            <TextField className="bold-text" value={user.nome} variant="outlined" fullWidth />
+                        </Box>
+
+                        <Box className="perfil-campos">
+                            <Typography>Nickname:</Typography>
+                            <TextField value={user.nickname} variant="outlined" fullWidth> </TextField>
+                        </Box>
+
+                        <Box className="perfil-campos">
+                            <Typography>Tipo de perfil:</Typography>
+                            <TextField value={user.tipo} variant="outlined" fullWidth> </TextField>
+                        </Box>
+
+                        <Box className="perfil-campos">
+                        <Typography>Usuário:</Typography>
+                        <TextField value={user.usuario} variant="outlined" fullWidth> </TextField>
+                        </Box>
+                    </Box>
+
                 </Box>
-
-                <p className='card-container-texto'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam accusantium totam incidunt architecto maiores, perferendis eius. Tempora ullam magni dolore voluptatibus, quidem sunt tempore distinctio ut aliquam modi aliquid officiis.
-                    Assumenda voluptatibus, animi pariatur voluptatum magnam ullam aspernatur optio suscipit incidunt dolor modi quos aperiam. Quam possimus rerum iste nobis quas porro unde sequi, sed nisi labore est voluptas corrupti.
-                    Deleniti officiis sint perspiciatis nisi iste, voluptate sunt asperiores dolor sapiente non corporis omnis voluptatem soluta. Nulla odio alias aperiam, magnam eaque assumenda tempora! Inventore odit iure unde placeat iste.
-                </p>
-
-                <p className='card-container-texto'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias consectetur tempore enim hic ad, optio ratione repellendus et. Nemo facilis laborum eum facere ipsam ab ad iusto eligendi deleniti qui?
-                </p>
-            </Box>
-        </Box>
+            </Container>
         </>
     );
 }

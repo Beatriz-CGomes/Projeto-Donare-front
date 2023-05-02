@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core";
 import './CadastroPost.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import { buscar, buscarId, postar, atualizar } from '../../../services/Service';
@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { UserState } from './../../../store/tokens/TokensReducer';
 import { toast } from 'react-toastify';
 import { Box } from '@mui/material';
+import User from '../../../models/User';
 
 function CadastroPost() {
     let navigate = useNavigate();
@@ -17,6 +18,21 @@ function CadastroPost() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
       );
+    
+      const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+      );
+
+      const [user, setUser] = useState<User>({
+        id: +userId,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        nickname: '',
+        tipo: 1
+    })
+      
 
     useEffect(() => {
         if (token == "") {
@@ -88,7 +104,8 @@ function CadastroPost() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario: user
         })
 
     }
@@ -97,7 +114,7 @@ function CadastroPost() {
         e.preventDefault()
 
         if (id !== undefined) {
-            atualizar(`/postagens`, postagem, setPostagem, {
+             await atualizar(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
@@ -113,7 +130,7 @@ function CadastroPost() {
                 progress: undefined,
             });
         } else {
-            postar(`/postagens`, postagem, setPostagem, {
+            await postar(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
@@ -128,8 +145,8 @@ function CadastroPost() {
                 theme: "colored",
                 progress: undefined,
             });
+            navigate('/posts')
         }
-        back()
 
     }
 

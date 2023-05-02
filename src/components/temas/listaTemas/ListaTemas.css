@@ -1,12 +1,16 @@
 .tamanho {
-    min-height: calc(30vh - 26px) !important;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto !important;
 }
 
 .text-align {
     text-align: center;
-    margin-top: 50px !important;
+    margin: 50px auto;
     letter-spacing: 1px;
     color: black !important;
+    text-align: justify;
+
 }
 
 .subtitle1{
@@ -21,11 +25,11 @@
 }
 
 .buttonAdd {
-    display: flex;
+    display: flex ;
     justify-content: end;
     position: sticky !important;
     bottom: 60px;
-    left: 1250px;
+    left: 90vw;
     z-index: 9999;
     border: none;
     outline: none;
@@ -34,6 +38,6 @@
     border-radius: 10px;
 }
 
-.card{
-    margin-bottom: 50px !important;
+.card-temas{
+    max-width: 400px !important;
 }

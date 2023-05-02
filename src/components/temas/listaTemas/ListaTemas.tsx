@@ -59,7 +59,7 @@ function ListaTemas() {
                 Objetivos De Desenvolvimento Sustentável Da ONU
             </Typography>
 
-            <Typography variant="body1" className="text-align, card">
+            <Typography variant="body1" className="text-align card">
                 Em 2015, a ONU propôs aos seus países membros uma nova agenda de desenvolvimento sustentável para os próximos 15 anos, a Agenda 2030, composta pelos 17 Objetivos de Desenvolvimento Sustentável (ODS).
 
                 Esse é um esforço conjunto, de países, empresas, instituições e sociedade civil. Os ODS buscam assegurar os direitos humanos, acabar com a pobreza, lutar contra a desigualdade e a injustiça, alcançar a igualdade de gênero e o empoderamento de mulheres e meninas, agir contra as mudanças climáticas, bem como enfrentar outros dos maiores desafios de nossos tempos. O setor privado tem um papel essencial nesse processo como grande detentor do poder econômico, propulsor de inovações e tecnologias influenciador e engajador dos mais diversos públicos – governos, fornecedores, colaboradores e consumidores. (Fonte: Pacto Global Rede Brasil)
@@ -67,7 +67,7 @@ function ListaTemas() {
 
             {temas.map(tema => (
                 <Box m={2} className="tamanho">
-                    <Card variant="outlined" className= "subtitle1">
+                    <Card variant="outlined" className= "card-temas">
                         <CardContent >
                             <Typography variant="h5" color="textSecondary" gutterBottom>
                                 {tema.nome}

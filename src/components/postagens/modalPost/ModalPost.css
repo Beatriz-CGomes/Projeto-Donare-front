@@ -4,35 +4,42 @@
   border-radius: 12px;
 }
 
-.card-publicar{
-    margin:0 auto;
-    max-width: 40vw;
-    border-radius: 12px !important;
-    border: 2px solid orange !important;
-  }
-
-.display-flex-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.card-publicar {
+  margin: 0 auto;
+  max-width: 40vw;
+  border-radius: 12px !important;
+  border: 2px solid orange !important;
 }
 
-.botao-postagem{
-    padding-left: 10px !important;
-    width: 60vh;
-    margin-left: 15px !important;
-    border: 1px solid orange !important;
+.display-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.bottom-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    text-align: center;
-    padding: 5px !important;
+.botao-postagem {
+  padding-left: 10px !important;
+  width: 60vh;
+  margin-left: 15px !important;
+  border: 1px solid orange !important;
 }
 
-.icones-barra{
-    padding: 8px !important;
-    color: orange !important;
+.bottom-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 5px !important;
+}
+
+.icones-barra {
+  padding: 8px !important;
+  color: orange !important;
+}
+
+.imagem-user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
 }

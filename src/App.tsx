@@ -16,6 +16,7 @@ import ListaPostagem from './components/postagens/listarPost/ListaPost'
 import CadastroPost from './components/postagens/cadastrarPost/CadastroPost'
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem'
 import Perfil from './pages/Perfil/Perfil'
+import Redirect from './components/redirect/Redirect'
 
 function App() {
   return (
@@ -34,13 +35,12 @@ function App() {
             <Route path='/formTema' element={<CadastroTema />} />
             <Route path='/formTema/:id' element={<CadastroTema />} />
             <Route path='/deletarTema/:id' element={<DeletarTema />} />
-            <Route path="/posts" element={<ListaPostagem/>}/>
+            <Route path="/posts" element={<Redirect/>}/>
             <Route path="/formPostagem" element={<CadastroPost/>}/>
             <Route path="/formPostagem/:id" element={<CadastroPost/>}/>
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem/>}/>
-
           </Routes>
-          {<Footer />}
+          <Footer />
         </BrowserRouter>
       </Provider>
     </>

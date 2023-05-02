@@ -82,7 +82,7 @@ function ListaPostagem() {
       posts.map(post => (
         <Card variant='elevation' className='cor-cartao'>
          <CardHeader
-            avatar={<img src="https://i.imgur.com/iAIRTMo.png" alt="foto" className='foto' />}
+            avatar={<img src={post.usuario?.foto} alt="foto" className='foto' />}
             title={<Typography>{post.usuario?.nome}</Typography>}
             subheader={<Typography>{post.tema?.nome}</Typography>}
             action={
@@ -108,6 +108,7 @@ function ListaPostagem() {
             <Typography variant="body2" color="textSecondary" component="p">
               {post.texto}
             </Typography>
+            <img src={post.imagem !== '' ? post.imagem :''} alt="" className='imagem-postagem'/>
           </CardContent>
 
           <CardActions className='post-icones'>

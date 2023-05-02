@@ -86,7 +86,7 @@ return (
               Deseja deletar o Tema:
             </Typography>
             <Typography>
-              {tema?.descricao}
+              {tema?.nome}
             </Typography>
           </Box>
         </CardContent>

@@ -1,7 +1,7 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import CloseIcon from '@material-ui/icons/Close';
 import { Box, Modal } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CadastroPost from "../cadastrarPost/CadastroPost";
 import { Avatar, Button, Card, CardContent, IconButton, Typography } from "@material-ui/core";
 import PhotoIcon from '@material-ui/icons/Photo';
@@ -9,6 +9,10 @@ import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 
 import './ModalPost.css'
+import { useSelector } from "react-redux";
+import { UserState } from "../../../store/tokens/TokensReducer";
+import User from "../../../models/User";
+import { buscarId } from "../../../services/Service";
 
 //Função para centralizar Modal
 function ModalStyle(){
@@ -39,6 +43,41 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function ModalPost() {
 
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    );
+
+    const id = useSelector<UserState,UserState['id']>(
+        (state)=>state.id
+    )
+
+    const [user,setUser] = useState<User>({
+        id: +id,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        nickname:'',
+        tipo: 1
+    })
+
+    //pegar os dados do usuario pelo ID:
+    async function findById(id:string) {
+        await buscarId(`/usuarios/${id}`,setUser,{
+            headers:{
+                'Authorization':token
+            }
+        })
+    }
+
+    useEffect(()=>{
+        if(id !== undefined){
+            findById(id)
+        }
+    },[id])
+
+    
+
     const estilo = useStyles();
 
     const [modalStyle] = React.useState(ModalStyle)
@@ -67,7 +106,7 @@ function ModalPost() {
     return (
         <Card className="card-publicar" variant="outlined">
             <CardContent className="display-flex-row">
-                <Avatar>D</Avatar>
+                <img src={user.foto} className="imagem-user"/>
                 <Button className="botao-postagem" variant="outlined" onClick={abreModal}>Faça sua Postagem</Button>
                 <Modal open={open} onClose={fechaModal} aria-labelledby='simple-modal-title' aria-describedby='simple-modal-description'>
                     {conteudo}

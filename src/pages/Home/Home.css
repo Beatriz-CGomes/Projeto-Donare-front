@@ -120,3 +120,8 @@ ul li {
   border-radius: 12px;
 }
 
+.foto-usuario{
+  border-radius: 50%;
+  width: 120px !important;
+ height: 120px !important;
+}

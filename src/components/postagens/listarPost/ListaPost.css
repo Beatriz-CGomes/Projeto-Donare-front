@@ -24,3 +24,8 @@
    display: flex;
    flex-direction: column;
 }
+
+.imagem-postagem{
+   max-width: 600px !important;
+   padding: 10px;
+}

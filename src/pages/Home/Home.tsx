@@ -88,10 +88,10 @@ function Home() {
                     <Box className="box">
                         <Card variant="outlined" className="card">
                             <CardContent className="card-content">
-                                <Avatar className="icons padding-top-bot">D</Avatar>
+                                <img src={user.foto} className="foto-usuario padding-top-bot" alt="" />
                                 <Typography variant="h5" className="padding-top-bot titulo">{user.nome}</Typography>
                                 <Typography className="padding-top-bot" color="textSecondary">{user.nickname}</Typography>
-                                <Typography className="padding-top-bot" color="textSecondary">Tipo: {user.tipo}</Typography>
+                                <Typography className="padding-top-bot" color="textSecondary">Tipo: {user.tipo === 0 ? 'Admin' : 'Pessoa Fisica'}</Typography>
                             </CardContent>
 
                             <CardActions className="box">
@@ -126,7 +126,10 @@ function Home() {
                 </Grid>
                 <Grid item xs={4} className="teste">
                     <ModalPost />
-                    <ListaPostagem />
+                    <Grid container direction="column-reverse">
+                        <Grid item><ListaPostagem /></Grid>
+                    </Grid>
+                    
                 </Grid>
 
                 <Grid item xs={4}>
