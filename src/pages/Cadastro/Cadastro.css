@@ -1,16 +1,18 @@
 .bg-page {
-    min-height: calc(100vh - 86px);
-    min-width: 98vw;
     background-color: rgb(233, 233, 233);
+    min-height: 100vh;
+    min-width: 100vw;
+
 }
 
 /* fundo*/
 .grid-form {
     background-color:  #fffefead;
-    margin-top: 15px !important;
     border-radius: 15px !important;
     box-sizing: border-box !important;
-    margin-right: -5px!important;
+    max-width: 50vw !important;
+    padding: 30px !important;
+    margin: 5vh 15vh 0 15px
 
 }
 
@@ -41,14 +43,11 @@
     padding-top: 5px!important;
     color: rgb(61, 61, 61) !important;
     font-size: 12px !important;
-    margin-left: 50px !important;
 }
 
 /* Bordas do formulário */
 .formulario .MuiOutlinedInput-root {
     border-radius: 14px !important;
-    width: 450px !important;
-    margin-left: 50px !important;
 
 }
 
@@ -60,8 +59,7 @@
     color: rgb(255, 255, 255) !important;
     font-weight: 'bold' !important;
     border-radius: 55px !important;
-    margin-left: 50px !important;
-    width: 450px !important;
+    max-width: 450px !important;
 }
 
 /* botão entrar  - CADASTRAR*/
@@ -75,7 +73,6 @@
     color: #363636;
     font-family: "Calibri";
     font-size: 17px !important;
-    margin-left: 145px !important;
 }
 
 /* fazer login */
@@ -85,7 +82,7 @@
     font-family: "Calibri";
     font-weight: bold !important;
     margin-left: 12px !important;
-    font-size: 22px !important;
+    font-size: 20px !important;
     margin-right: 50px !important;
 }
 
@@ -94,7 +91,12 @@
     background-image: url('https://i.imgur.com/c8VK1bz.png');
     background-repeat: no-repeat;
     width: 100vw;
-    background-position: center;
+    background-position: center !important;
     background-size: cover;
+    margin-top: 25vh !important;
+
+}
+
+.texto-extra{
 
 }

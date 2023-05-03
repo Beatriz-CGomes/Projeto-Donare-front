@@ -1,27 +1,28 @@
-import { Avatar, Card, CardActions, CardContent, CardHeader } from '@material-ui/core';
-import { CardMedia, IconButton, Typography, Menu, MenuItem,Fade } from '@material-ui/core'
+import { Card, CardActions, CardContent, CardHeader } from '@material-ui/core';
+import { IconButton, Typography, Menu, MenuItem, Fade } from '@material-ui/core'
 import React, { useState, useEffect } from 'react';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import Postagem from '../../../models/Postagem';
 import { useSelector } from "react-redux";
-import { useNavigate,Link, useParams } from 'react-router-dom'
+import { useNavigate, Link, useParams } from 'react-router-dom'
 import { atualizar, buscar } from '../../../services/Service';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { UserState, reducer } from '../../../store/tokens/TokensReducer';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import './ListaPost.css'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
+import CreateIcon from '@material-ui/icons/Create';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { Box } from '@mui/material';
 
 function ListaPostagem() {
-  const {id} = useParams<{id:string}>();
+  const { id } = useParams<{ id: string }>();
 
   const [posts, setPosts] = useState<Postagem[]>([])
 
-  const [postagem,setPostagem] = useState<Postagem>()
+  const [postagem, setPostagem] = useState<Postagem>()
 
-  const token = useSelector<UserState,UserState['tokens']>(
+  const token = useSelector<UserState, UserState['tokens']>(
     (state) => state.tokens
   )
 
@@ -68,52 +69,60 @@ function ListaPostagem() {
   }
 
   //método curtir
-  async function curtir(id:number) {
-    await atualizar(`/postagens/curtir/${id}`,postagem,setPostagem,{
-      headers:{
-        'Authorization':token
+  async function curtir(id: number) {
+    await atualizar(`/postagens/curtir/${id}`, postagem, setPostagem, {
+      headers: {
+        'Authorization': token
       }
     })
     listaPostagem()
+  }
+
+  function buttonLiked(curtidas: number | null) {
+    if (curtidas !== null && curtidas > 0)
+      return "isLiked"
   }
 
   return (
     <>{
       posts.map(post => (
         <Card variant='elevation' className='cor-cartao'>
-         <CardHeader
-            avatar={<img src={post.usuario?.foto} alt="foto" className='foto' />}
-            title={<Typography>{post.usuario?.nome}</Typography>}
-            subheader={<Typography>{post.tema?.nome}</Typography>}
-            action={
-              <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true'onClick={abreMenu}>
-                <MoreVertIcon />
-              </IconButton>
-            }
-          ></CardHeader>
-         
-          <Menu anchorEl={menu} id='menu-opcoes' keepMounted open={abre} onClose={fechaMenu} TransitionComponent={Fade}>
-            <Link to={`/formPostagem/${post.id}`}>
-            <MenuItem>Atualizar</MenuItem>
-            </Link>
-            <Link to={`/deletarPostagem/${post.id}`}>
-            <MenuItem>Deletar</MenuItem>
-            </Link>
-          </Menu>
+          <Box className='header-postagens' display='flex'>
+            <CardHeader
+              avatar={<img src={post.usuario?.foto} alt="foto" className='foto' />}
+              title={<Typography>{post.usuario?.nome}</Typography>}
+              subheader={<Typography>{post.tema?.nome}</Typography>}
+            ></CardHeader>
 
-          <CardMedia image="https://i.imgur.com/iAIRTMo.png" />
+            <Box className='icones-postagens'>
+              <Link to={`/formPostagem/${post.id}`}>
+              <IconButton >
+              <CreateIcon />
+              </IconButton>
+              </Link>
+
+              <Link to={`/deletarPostagem/${post.id}`}>
+              <IconButton >
+              <DeleteIcon />
+              </IconButton>
+              </Link>
+              
+            </Box>
+          </Box>
 
           <CardContent>
             <Typography variant='body1'>{post.titulo}</Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {post.texto}
             </Typography>
-            <img src={post.imagem !== '' ? post.imagem :''} alt="" className='imagem-postagem'/>
+            <Box display='flex' justifyContent='center'>
+            <img src={post.imagem !== '' ? post.imagem : ''} alt="" className='imagem-postagem' />
+            </Box>
           </CardContent>
 
           <CardActions className='post-icones'>
-            <IconButton className='curtido' aria-label="Curtir" onClick={()=>{curtir(post.id)}}>
-              <FavoriteIcon />
+            <IconButton className='curtido' aria-label="Curtir" onClick={() => { curtir(post.id) }}>
+              <FavoriteIcon className={buttonLiked(post.curtidas)} />
               <Typography variant='body2'>{post.curtidas}</Typography>
             </IconButton>
 

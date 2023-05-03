@@ -9,8 +9,12 @@
     margin: 50px auto;
     letter-spacing: 1px;
     color: black !important;
-    text-align: justify;
 
+}
+
+.texto-temas{
+    text-align: justify;
+    margin: 10px 30px !important;
 }
 
 .subtitle1{
@@ -36,8 +40,19 @@
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
+    background-color: #fd841f !important;
 }
 
 .card-temas{
-    max-width: 400px !important;
+    max-width: 600px !important;
+    min-width: 600px !important;
+}
+
+.botoes-atualizar{
+    background-color: #fd841f !important;
+    font-weight: bold !important;
+}
+
+.botoes-deletar{
+    border: 1px solid #fd841f !important;
 }

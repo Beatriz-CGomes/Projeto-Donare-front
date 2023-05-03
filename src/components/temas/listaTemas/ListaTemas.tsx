@@ -59,12 +59,14 @@ function ListaTemas() {
                 Objetivos De Desenvolvimento Sustentável Da ONU
             </Typography>
 
-            <Typography variant="body1" className="text-align card">
+            <Typography variant="body1" className="texto-temas">
                 Em 2015, a ONU propôs aos seus países membros uma nova agenda de desenvolvimento sustentável para os próximos 15 anos, a Agenda 2030, composta pelos 17 Objetivos de Desenvolvimento Sustentável (ODS).
 
-                Esse é um esforço conjunto, de países, empresas, instituições e sociedade civil. Os ODS buscam assegurar os direitos humanos, acabar com a pobreza, lutar contra a desigualdade e a injustiça, alcançar a igualdade de gênero e o empoderamento de mulheres e meninas, agir contra as mudanças climáticas, bem como enfrentar outros dos maiores desafios de nossos tempos. O setor privado tem um papel essencial nesse processo como grande detentor do poder econômico, propulsor de inovações e tecnologias influenciador e engajador dos mais diversos públicos – governos, fornecedores, colaboradores e consumidores. (Fonte: Pacto Global Rede Brasil)
+                Esse é um esforço conjunto, de países, empresas, instituições e sociedade civil. Os ODS buscam assegurar os direitos humanos, acabar com a pobreza, lutar contra a desigualdade e a injustiça, alcançar a igualdade de gênero e o empoderamento de mulheres e meninas, agir contra as mudanças climáticas, bem como enfrentar outros dos maiores desafios de nossos tempos. O setor privado tem um papel essencial nesse processo como grande detentor do poder econômico, propulsor de inovações e tecnologias influenciador e engajador dos mais diversos públicos – governos, fornecedores, colaboradores e consumidores. 
+                (Fonte: <a href="https://www.pactoglobal.org.br/ods" target="_blank"> Pacto Global Rede Brasil</a>)
             </Typography>
 
+            <Box className="listagem-temas">
             {temas.map(tema => (
                 <Box m={2} className="tamanho">
                     <Card variant="outlined" className= "card-temas">
@@ -82,7 +84,7 @@ function ListaTemas() {
 
                                 <Link to={`/formTema/${tema.id}`} className="text-decorator none">
                                     <Box mx={1}>
-                                        <Button variant="contained" className="marginLeft" size="small" color="primary">
+                                        <Button variant="contained" className="botoes-atualizar" size="small" color="primary">
                                             Atualizar
                                         </Button>
                                     </Box>
@@ -90,7 +92,7 @@ function ListaTemas() {
 
                                 <Link to={`/deletarTema/${tema.id}`} className="text-decorator none">
                                     <Box mx={1}>
-                                        <Button variant="contained" size="small" color="secondary">
+                                        <Button className="botoes-deletar" variant="outlined" size="small" >
                                             Deletar
                                         </Button>
                                     </Box>
@@ -101,6 +103,7 @@ function ListaTemas() {
                 </Box >
 
             ))}
+            </Box>
             <Link to='/formTema'>
             <Fab color="primary" aria-label="add" className="buttonAdd">
                 <AddIcon />

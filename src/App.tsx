@@ -25,6 +25,7 @@ function App() {
         <ToastContainer/>
         <BrowserRouter>
           <Navbar />
+          <div className='tam'>
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path='/login' element={<Login />} />
@@ -40,6 +41,7 @@ function App() {
             <Route path="/formPostagem/:id" element={<CadastroPost/>}/>
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem/>}/>
           </Routes>
+          </div>
           <Footer />
         </BrowserRouter>
       </Provider>

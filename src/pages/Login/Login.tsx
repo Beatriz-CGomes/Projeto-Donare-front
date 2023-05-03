@@ -61,7 +61,7 @@ function Login() {
     useEffect(() => {
         if (respUserLogin.token !== "") {
             console.log("Token:" + respUserLogin.token)
-            console.log("ID: "+respUserLogin.id)
+            console.log("ID: " + respUserLogin.id)
 
             dispatch(addToken(respUserLogin.token))
             dispatch(addID(respUserLogin.id.toString()))
@@ -105,58 +105,51 @@ function Login() {
     return (
 
         <Grid container justifyContent='center' alignItems='center' className='bg-color'>
-            <Grid item xs={1}></Grid>
-
-            <Grid item xs={4} className='form-login login-top'>
+            <Grid item xs={5} className=''>
 
 
-                <form onSubmit={onSubmit}>
+                <form className='form-login login-top' onSubmit={onSubmit}>
                     <Typography variant="h6" className='texto1'>Conecte-se</Typography>
 
+                    <TextField label="Email ou telefone" className='input-form' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='usuario' variant='outlined' margin='normal' name='usuario' fullWidth />
 
-                    <Typography className='texto0'>E-mail ou telefone </Typography>
-                    <TextField className='input-form' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='usuario' variant='outlined' margin='normal' name='usuario' fullWidth />
+                    <TextField label="Senha:" className='input-form' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' type='password' variant='outlined' margin='normal' fullWidth name='senha' />
 
-
-                    <Typography className='texto0'>Senha</Typography>
-                    <TextField className='input-form' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} id='senha' type='password' variant='outlined' margin='normal' fullWidth name='senha' />
-
-
-
-                    <Box textAlign='center' marginTop={2}>
+                    <Box textAlign='center' marginTop={2} display='flex' justifyContent="left">
                         <Typography variant="h6" className='texto2' style={{ fontWeight: 'bold' }}>Esqueceu a senha? </Typography>
+                    </Box>
+
+
+                    <Box textAlign='center' justifyContent="center" marginTop={2} display='flex'>
                         <Button type='submit' className='buttom'>Entrar
                         </Button>
                     </Box>
 
+                    <Box display='flex' className='centralizar' justifyContent='left' marginTop={3}>
+                        <Box>
+                            <Typography variant='subtitle1' gutterBottom align='center' className='chamada1'>Não tem uma conta? </Typography>
+                        </Box>
 
+
+                        <Link to="/cadastrar" style={{ textDecoration: "none" }}>
+                            <Typography variant='subtitle1' gutterBottom align='center' className='chamada2'>Cadastre-se </Typography>
+                        </Link>
+                    </Box>
+
+                    <Box display='row' justifyContent='left' marginTop={1}>
+                        <Typography className='hr' > <hr className='hr' /></Typography>
+                    </Box>
+
+                    <Box display='flex' alignItems="center" className='fundo'>
+                        <Box className='google-itens'>
+                        <GoogleIcon className='redes' />
+                        <Typography gutterBottom align='center' className='google' >Continuar com o Google </Typography>
+                        </Box>
+                    </Box>
                 </form>
 
 
-                <Box display='flex' justifyContent='left' marginTop={3}>
 
-                    <Box>
-                        <Typography variant='subtitle1' gutterBottom align='center' className='chamada1'>Não tem uma conta? </Typography>
-                    </Box>
-
-
-                    <Link to="/cadastrar" style={{ textDecoration: "none" }}>
-                        <Typography variant='subtitle1' gutterBottom align='center' className='chamada2'>Cadastre-se </Typography>
-                    </Link>
-                </Box>
-
-                <Box display='row' justifyContent='left' marginTop={1}>
-                    <Typography className='hr' style={{ width: '1000px' }}> <hr className='hr' /></Typography>
-                </Box>
-
-
-
-
-                <Box display='flex' justifyContent='left' alignItems="center" className='fundo'>
-                    <GoogleIcon className='redes' />
-                    <Typography gutterBottom align='center' className='google' >Continuar com o Google </Typography>
-
-                </Box>
             </Grid>
             <Grid item xs={7} className='imagem'>
             </Grid>

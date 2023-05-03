@@ -1,9 +1,6 @@
 .bg-color {
     background-color: rgb(234, 237, 240);
-    min-height: 100vh !important;
     display: flex !important;
-    flex-direction: row !important;
-
 }
 
 .form-login{
@@ -12,8 +9,11 @@
 }
 
 .login-top {
-    padding: 60px;
-    margin-left: 15px;
+    max-width: 30vw;
+    min-height: 50vh !important;
+    max-height: 70vh !important;
+    margin: 0 auto;
+    padding: 50px;
 }
 
 /* email e senha*/
@@ -50,13 +50,11 @@
     font-size: 15px !important;
     text-align: left;
     padding-bottom: 10px;
-    margin-left: 59px !important;
 }
 
 /* entrar */
 .chamada1 {
     font-size: 16px !important;
-    margin-left: 120px !important;
     color: #363636;
 }
 
@@ -95,13 +93,10 @@
 
 .input-form .MuiOutlinedInput-root {
     border-radius: 14px !important;
-    width: 400px !important;
-    margin-left: 55px !important;
 }
 
 .hr {
     max-width: 25vw !important;
-    margin-left: 60px;
 }
 
 .redes {
@@ -117,6 +112,7 @@
     margin-top: 8px !important;
     padding-left: 10px;
     font-size: 19px !important;
+    margin-left: 10px !important;
 
 }
 
@@ -124,9 +120,17 @@
 .fundo {
     background-color: #dacfcf81;
     border-radius: 15px;
-    box-sizing: border-box !important;
-    height: 50px !important;
-    width: 400px !important;
-    margin-left: 55px !important;
     margin-top: 8px !important;
+    display: flex;
+}
+
+.centralizar{
+    display: flex;
+    justify-content: center !important;
+}
+
+.google-itens{
+    display: flex;
+    align-items: center;
+    justify-content: right !important;
 }

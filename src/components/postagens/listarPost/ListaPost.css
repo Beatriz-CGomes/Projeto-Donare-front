@@ -26,6 +26,26 @@
 }
 
 .imagem-postagem{
-   max-width: 600px !important;
+   max-width: 400px !important;
+   max-height: 400px !important;
    padding: 10px;
+
+}
+
+.header-postagens{
+   display: flex;
+   justify-content: space-between;
+
+}
+
+.icones-postagens{
+   display: flex;
+}
+
+.non-padding-icon{
+   padding: 0 !important;
+}
+
+.isLiked{
+   color: red!important;
 }
