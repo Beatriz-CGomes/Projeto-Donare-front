@@ -46,8 +46,6 @@ function Cadastrar() {
 
     async function cadastrar(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
-
-        console.log(user)
         if (verificarSenha == user.senha) {
             await cadastro(`/usuarios/cadastrar`, user, setUserResult)
             toast.info('Usuário cadastrado com Sucesso!', {
